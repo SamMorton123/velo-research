@@ -25,7 +25,17 @@ def prepare_gc_year_data(data, year, sort = True):
     
     return year_data
 
-def prepare_gc_race_data(data, race):
+def prepare_one_day_year_data(data, year, sort = True):
+
+    year_data = data[data['year'] == year]
+    year_data = year_data[year_data['type'] == 'one-day-race']
+
+    if sort:
+        year_data.sort_values(by = ['month', 'day'], inplace = True)
+    
+    return year_data
+
+def prepare_race_data(data, race):
     """
     Given a dataframe containing gc results for a given year, isolate the gc result
     for the given race name.

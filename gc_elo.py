@@ -68,7 +68,7 @@ for year in range(2022, 2023):
             continue
 
         # prepare and isolate data for the given race
-        race_data = utils.prepare_gc_race_data(year_data, race)
+        race_data = utils.prepare_race_data(year_data, race)
 
         # get race weight
         race_weight = WEIGHT_CLASSES[RACE_WEIGHTS[str(year)][race]]
