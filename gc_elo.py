@@ -53,25 +53,25 @@ f.close()
 elo = CyclElo()
 
 # loop through each year in the gc data
-for year in range(2022, 2023):
+for year in range(2007, 2023):
     
     print(f'\n====={year}=====\n')
     
     # prepare and isolate data for the given year
-    year_data = utils.prepare_gc_year_data(DATA, year)
+    year_data = utils.prepare_year_data(DATA, year, typ = 'gc')
     
     # loop through each race in the current year's data
     for race in year_data['name'].unique():
 
         # if race is not contained within the weight data, skip
-        if race not in RACE_WEIGHTS[str(year)]:
+        if race not in RACE_WEIGHTS['stage-races'][str(year)]:
             continue
 
         # prepare and isolate data for the given race
         race_data = utils.prepare_race_data(year_data, race)
 
         # get race weight
-        race_weight = WEIGHT_CLASSES[RACE_WEIGHTS[str(year)][race]]
+        race_weight = WEIGHT_CLASSES[RACE_WEIGHTS['stage-races'][str(year)][race]]
         
         # get the race's date as date object
         race_date = utils.get_race_date(race_data)

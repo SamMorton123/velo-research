@@ -11,14 +11,14 @@ RIDER_COL = 'rider'
 TIME_COL = 'time'
 
 
-def prepare_gc_year_data(data, year, sort = True):
+def prepare_year_data(data, year, typ = 'gc', sort = True):
     """
     Given a dataframe and a year, return a dataframe containing GC data for the
     given year.
     """
 
     year_data = data[data['year'] == year]
-    year_data = year_data[year_data['type'] == 'gc']
+    year_data = year_data[year_data['type'] == typ]
     
     if sort:
         year_data.sort_values(by = ['month', 'day'], inplace = True)
@@ -45,6 +45,13 @@ def prepare_race_data(data, race):
 
     # remove riders banned for doping from the results
     return _remove_dopers(race_data)
+
+def prepare_stage_data(data, stage):
+    return data[data['stage'] == stage]
+
+def get_worlds_and_olympics(data, year):
+    year_data = data[data['year'] == year]
+    return year_data[year_data['name'].isin(['world-championship-itt', 'olympic-games-itt'])]
 
 def get_race_date(race_data):
     """

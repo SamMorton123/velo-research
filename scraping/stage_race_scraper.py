@@ -13,12 +13,12 @@ f.close()
 def create_link(name, year, base = 'https://www.procyclingstats.com/race/'):
     return f'{base}{name}/{year}'
 
-for year in range(2007, 2008):
+for year in range(2021, 2022):
     
     print(f'===== {year} =====')
     
     race_info = []
-    for race in RACES[str(year)]:
+    for race in RACES['stage-races'][str(year)]:
         race_info.append((race, create_link(race, year), False))
     
     scrl.get_race_data(race_info, fname = 'new_collected_dataset.csv')

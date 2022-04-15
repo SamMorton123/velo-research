@@ -47,7 +47,7 @@ for year in range(2022, 2023):
     print(f'\n====={year}=====\n')
     
     # prepare and isolate data for the given year
-    year_data = utils.prepare_one_day_year_data(DATA, year)
+    year_data = utils.prepare_year_data(DATA, year, typ = 'one-day-race')
     
     # loop through each race in the current year's data
     for race in year_data['name'].unique():
