@@ -21,7 +21,7 @@ f.close()
 for year in range(2022, 2023):
 
     race_info = []
-    for race in RACES[str(year)]['one-day']:
+    for race in RACES['one-day-races'][str(year)]:
         race_info.append((race, create_link(race, year), True))
 
 

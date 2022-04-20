@@ -20,5 +20,15 @@ def linear2(race_weight, rider1_place, rider2_place):
     n = k / (rider2_place - rider1_place)
     return n
 
+def linear3(race_weight, rider1_place, rider2_place, zero_threshold = 50):
+
+    place_diff = rider2_place - rider1_place
+    if place_diff > zero_threshold:
+        return 0
+
+    k = race_weight / np.sqrt(rider1_place) 
+    n = k / np.power(place_diff, 1)
+    return n
+
 def piecewise(race_weight, rider1_place, rider2_place):
     return (race_weight / np.power(rider1_place, 1.3)) * (rider1_place / rider2_place)

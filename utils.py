@@ -41,7 +41,14 @@ def prepare_race_data(data, race):
     for the given race name.
     """
 
-    race_data = data[data['name'] == race]
+    race_data = data[data['name'] == race].reset_index()
+
+    # ensure there is no duplicate data by using the places column
+    for i in range(1, len(race_data.index)):
+        idx = race_data.index[i]
+        if race_data.loc[idx, 'place'] < race_data.loc[race_data.index[i - 1], 'place']:
+            race_data = race_data.iloc[0: i, :]
+            break
 
     # remove riders banned for doping from the results
     return _remove_dopers(race_data)

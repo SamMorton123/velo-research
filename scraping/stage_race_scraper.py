@@ -6,7 +6,10 @@ races to scrape.
 import json
 import scrape_lib_v2 as scrl
 
-with open('all_races.json') as f:
+RACES_DATA = '../data/women_race_data.json'  # races to scrape
+DATA_FNAME = '../data/women_velodata.csv'  # where to save scraped data
+
+with open(RACES_DATA) as f:
     RACES = json.load(f)
 f.close()
 
@@ -21,4 +24,4 @@ for year in range(2021, 2022):
     for race in RACES['stage-races'][str(year)]:
         race_info.append((race, create_link(race, year), False))
     
-    scrl.get_race_data(race_info, fname = 'new_collected_dataset.csv')
+    scrl.get_race_data(race_info, fname = DATA_FNAME)

@@ -15,7 +15,7 @@ import ratings.rider_selection as rs
 VERBOSE = True
 RESULTS_DATA_PATH = 'data/velodata.csv'
 RACE_WEIGHTS_PATH = 'data/races_data.json'  # path to weights for each race
-TIMEGAP_MULTIPLIER = 3  # weight given to margin of victory
+TIMEGAP_MULTIPLIER = 1  # weight given to margin of victory
 NEW_SEASON_REGRESS_WEIGHT = 0.4  # weight the degree to which rider scores converge to 1500 during off season
 RIDER_SELECTION_METHOD = rs.select_all  # how the system determines which riders to save/print data for in the system
 RAW_RESULT_NUM_PRINTED = 15  # number of finishers printed in raw data per race if VERBOSE = True
@@ -23,19 +23,19 @@ RAW_RESULT_NUM_PRINTED = 15  # number of finishers printed in raw data per race 
 # weight classes taken from the RACE_WEIGHTS_PATH file, and these values give the actual weights for
 # the 12 (slightly) subjective race classifications I use
 WEIGHT_CLASSES = {
-    0: 100,  # tour
-    1: 70,  # giro/vuelta
-    2: 30,  # dauphine/suisse
-    3: 28,  # paris-nice/tirreno
-    4: 24,  # mid level world tour stage race (basque country, catalunya)
-    5: 20,  # lower world tour stage race (with climbs)
-    6: 14,  # lower world tour stage race (w/o major climbs)
-    7: 10,  # top level pro race (algarve, provence, tour of the alps)
-    8: 8,  # misc .1 or .pro which isn't good enough to be a 7
-    9: 5,
-    10: 4,
-    11: 2,
-    12: 1  # stage race, but no climbs or generally uncompetitive and thus not particularly informative
+    0: 25,  # tour
+    1: 17.5,  # giro/vuelta
+    2: 7.5,  # dauphine/suisse
+    3: 7,  # paris-nice/tirreno
+    4: 6,  # mid level world tour stage race (basque country, catalunya)
+    5: 5,  # lower world tour stage race (with climbs)
+    6: 3.5,  # lower world tour stage race (w/o major climbs)
+    7: 2.5,  # top level pro race (algarve, provence, tour of the alps)
+    8: 2,  # misc .1 or .pro which isn't good enough to be a 7
+    9: 1.25,
+    10: 1,
+    11: 0.5,
+    12: 0.25  # stage race, but no climbs or generally uncompetitive and thus not particularly informative
 }
 
 

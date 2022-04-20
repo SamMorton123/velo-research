@@ -22,9 +22,12 @@ RAW_RESULT_NUM_PRINTED = 15  # number of finishers printed in raw data per race 
 
 # weight classes taken from the RACE_WEIGHTS_PATH file
 WEIGHT_CLASSES = {
-    0: 30,
-    1: 25,
-    2: 18
+    0: 10,
+    1: 6,
+    2: 4,
+    3: 3,
+    4: 1.5,
+    5: 1
 }
 
 
@@ -53,14 +56,14 @@ for year in range(2022, 2023):
     for race in year_data['name'].unique():
 
         # if race is not contained within the weight data, skip
-        if race not in RACE_WEIGHTS[str(year)]['one-day']:
+        if race not in RACE_WEIGHTS['one-day-races'][str(year)]:
             continue
 
         # prepare and isolate data for the given race
         race_data = utils.prepare_race_data(year_data, race)
 
         # get race weight
-        race_weight = WEIGHT_CLASSES[RACE_WEIGHTS[str(year)]['one-day'][race]]
+        race_weight = WEIGHT_CLASSES[RACE_WEIGHTS['one-day-races'][str(year)][race]]
         
         # get the race's date as date object
         race_date = utils.get_race_date(race_data)
