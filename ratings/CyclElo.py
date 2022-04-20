@@ -11,7 +11,7 @@ import pandas as pd
 from termcolor import colored
 
 # local
-from ratings.decay_funcs import logistic_decay, linear2, piecewise
+from ratings.decay_funcs import logistic_decay, linear2, linear3, piecewise
 from ratings.Race import Race
 from ratings.Rider import Rider
 
@@ -66,7 +66,7 @@ class CyclElo:
         
         return rider
     
-    def simulate_race(self, race_name, results, race_weight, timegap_multiplier, k_func = linear2):
+    def simulate_race(self, race_name, results, race_weight, timegap_multiplier, k_func = linear3):
         '''
         Simulate a race as a series of head to head matchups between all participants in the race. This type
         of treatment can be used on different cycling disciplines, such as GC results and TT results.
@@ -86,8 +86,8 @@ class CyclElo:
         rider_order = []
 
         # run each head-to-head
-        for i in range(len(results.index)):
-            for j in range(len(results.index)):
+        for i in range(len(results.index) - 1):
+            for j in range(i + 1, len(results.index)):
 
                 # get rider i and j places
                 rider1_place = results[PLACES_COL].iloc[i]
@@ -135,7 +135,7 @@ class CyclElo:
                 self.h2h(
                     rider1, rider1_time, rider2, rider2_time, matchup_weight, timegap_multiplier
                 )
-        
+
         return rider_order
 
     def h2h(self, rider1, rider1_time, rider2, rider2_time, matchup_weight, timegap_multiplier):
