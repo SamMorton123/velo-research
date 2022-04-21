@@ -23,13 +23,13 @@ RAW_RESULT_NUM_PRINTED = 15  # number of finishers printed in raw data per race 
 # weight classes taken from the RACE_WEIGHTS_PATH file, and these values give the actual weights for
 # the 12 (slightly) subjective race classifications I use
 WEIGHT_CLASSES = {
-    0: 45,
-    1: 35,
-    2: 20,
-    3: 15,
-    4: 8,
-    5: 8,
-    6: 2
+    0: 11.25,
+    1: 7.75,
+    2: 5,
+    3: 3.25,
+    4: 2,
+    5: 2,
+    6: 0.25
 }
 
 
@@ -47,7 +47,7 @@ f.close()
 elo = CyclElo()
 
 # loop through each year in the gc data
-for year in range(2021, 2022):
+for year in range(2019, 2022):
     
     print(f'\n====={year}=====\n')
     

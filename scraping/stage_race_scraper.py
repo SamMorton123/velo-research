@@ -16,7 +16,7 @@ f.close()
 def create_link(name, year, base = 'https://www.procyclingstats.com/race/'):
     return f'{base}{name}/{year}'
 
-for year in range(2021, 2022):
+for year in range(2019, 2023):
     
     print(f'===== {year} =====')
     
