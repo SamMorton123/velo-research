@@ -100,61 +100,58 @@ class Velo:
         # add race object to list of races
         self.races.append(Race(race_name, race_weight, race_date, None))
 
-        # init list of rider order
-        rider_order = []
-
         # run each head-to-head
         for i in range(len(results.index) - 1):
             for j in range(i + 1, len(results.index)):
 
-                # get rider i and j places
+                # get each rider's place
                 rider1_place = results[PLACES_COL].iloc[i]
                 rider2_place = results[PLACES_COL].iloc[j]
                 
-                # if rider i's place isn't less than j's, continue
+                # if rider2 place is less than rider1 place, there's a data error
+                # and the matchup is skipped
                 if rider1_place >= rider2_place:
                     continue
 
                 # get rider i and j names
                 rider1_name = results[RIDER_COL].iloc[i]
-                try: rider1_age = int(results[AGE_COL].iloc[i])
-                except: rider1_age = 0
                 rider2_name = results[RIDER_COL].iloc[j]
-                try: rider2_age = int(results[AGE_COL].iloc[j])
-                except: rider2_age = 0
 
-                # get rider objects
+                # get rider ages
+                rider1_age = results[AGE_COL].iloc[i]
+                rider2_age = results[AGE_COL].iloc[j]
+
+                # get Rider objects for each rider
                 rider1 = self.add_new_rider(rider1_name, rider1_age)
                 rider2 = self.add_new_rider(rider2_name, rider2_age)
-
-                # add rider i to order if not already in it
-                if len(rider_order) == 0 or rider1 != rider_order[-1]:
-                    rider_order.append(rider1)
 
                 # add to rider race histories
                 rider1.add_new_race(race_name, race_weight, race_date, rider1_place)
                 rider2.add_new_race(race_name, race_weight, race_date, rider2_place)
 
-                # get rider times
-                try:
-                    if rider1_place == 0:
-                        rider1_time = timedelta(seconds = 0)
-                    else:
-                        rider1_time = timedelta(seconds = int(results[TIME_COL].iloc[i]))
-                    rider2_time = timedelta(seconds = int(results[TIME_COL].iloc[j]))
-                except:
-                    rider1_time = 0
-                    rider2_time = 0
+                # get rider timegaps in seconds
+                if rider1_place == 0:
+                    rider1_time = timedelta(seconds = 0)
+                else:
+                    try: rider1_time = timedelta(seconds = int(results[TIME_COL].iloc[i]))
+                    except: rider1_time = timedelta(seconds = 0)
+
+                try: rider2_time = timedelta(seconds = int(results[TIME_COL].iloc[j]))
+                except: rider2_time = timedelta(seconds = 0)
 
                 # get the matchup weight
-                matchup_weight = k_func(race_weight, rider1_place, rider2_place)
+                matchup_weight = k_func(
+                    race_weight,
+                    rider1_place,
+                    rider2_place,
+                    alpha = self.decay_alpha,
+                    beta = self.decay_beta
+                )
 
                 # run the head to head
                 self.h2h(
                     rider1, rider1_time, rider2, rider2_time, matchup_weight, timegap_multiplier
                 )
-
-        return rider_order
 
     def h2h(self, rider1, rider1_time, rider2, rider2_time, matchup_weight, timegap_multiplier):
         '''
