@@ -9,7 +9,6 @@ import pandas as pd
 # local
 import utils
 from ratings.Velo import Velo
-import ratings.rider_selection as rs
 
 # ===== Script Parameters ===== #
 VERBOSE = True
@@ -17,7 +16,6 @@ RESULTS_DATA_PATH = 'data/men_velodata.csv'
 RACE_WEIGHTS_PATH = 'data/men_races_data.json'  # path to weights for each race
 TIMEGAP_MULTIPLIER = 1  # weight given to margin of victory
 NEW_SEASON_REGRESS_WEIGHT = 0.4  # weight the degree to which rider scores converge to 1500 during off season
-RIDER_SELECTION_METHOD = rs.select_all  # how the system determines which riders to save/print data for in the system
 RAW_RESULT_NUM_PRINTED = 15  # number of finishers printed in raw data per race if VERBOSE = True
 
 # weight classes taken from the RACE_WEIGHTS_PATH file, and these values give the actual weights for
@@ -94,7 +92,7 @@ for year in range(begin_year, end_year):
             print(race_data[['place', 'rider', 'time', 'team']].iloc[0: RAW_RESULT_NUM_PRINTED, :])
 
             # print the elo system after this race is added
-            elo.print_system(year, RIDER_SELECTION_METHOD, min_rating = 1500)
+            elo.print_system(year, min_rating = 1500)
         
         elo.save_system(race_date)
     

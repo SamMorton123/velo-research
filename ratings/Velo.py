@@ -9,6 +9,7 @@ import pandas as pd
 from termcolor import colored
 
 # local
+from ratings import entities
 from ratings.entities import Rider, Race
 from ratings.utils import k_decay
 
@@ -46,36 +47,38 @@ class Velo:
         self.elo_q_base = elo_q_base
         self.elo_q_exponent_denom = elo_q_exponent_denom
          
-        # init arrays to track rider and race objects
-        self.riders = []
+        # init dict and array to track rider and race objects respectively
+        self.riders = {}  # format: {rider name: rider object}
         self.races = []
 
         # init dictionary to track rating data over time
         self.rating_data = {'year': [], 'month': [], 'day': []}
     
     def find_rider(self, name):
-        '''
-        Given the name of a rider, try to find the corresponding Rider object
-        within the elo system, and return the entire object. Returns None if no
-        Rider is found under the given name.
-        '''
+        """
+        Return an instance of the Rider class if the given name is found. Otherwise,
+        return None.
+        """
 
-        for rider in self.riders:
-            if rider.name == name:
-                return rider
+        if name in self.riders:
+            return self.riders[name]
+        
         return None
     
     def add_new_rider(self, name, age):
-        '''
-        Add new rider to the Elo system.
-        '''
+        """
+        Add a new rider object to the Elo system.
+        """
 
-        # try to find the rider
+        # check if the given name is already in the system
         rider = self.find_rider(name)
 
+        # if the rider isn't already in the system...
         if rider is None:
             rider = Rider(name, age = age)
-            self.riders.append(rider)
+            self.riders[name] = rider
+        
+        # otherwise update the age of the rider
         else:
             rider.age = age
         
@@ -184,42 +187,35 @@ class Velo:
         else: rider2.increment_losses()
 
     def apply_all_deltas(self, race_name, race_weight, datestamp):
-        '''
-        The Elo delta is the accumulated change in a Rider's Elo rating within the simulation
-        of a given race. The reason this is necessary is that we should be treating these head-to-heads
-        within a race as if they happen simultaneously, and therefore the effects of each of the head-to-heads
-        on a rider's Elo shouldn't be added until all the head-to-heads have been run.
-        '''
-
-        for rider in self.riders:
-            rider.resolve_delta(race_name, race_weight, datestamp)
+        for name in self.riders:
+            self.riders[name].resolve_delta(race_name, race_weight, datestamp)
 
     def new_season_regression(self, year, regression_to_mean_weight = 0.5):
-        '''
-        Each new season brings changes in the relative quality of riders. This moves the Elo rating
-        of each rider closer to the starting Elo rating of 1500 at the beginning of each season. This
-        means that a rider that ends a season with a rating of over 1500 will have their rating go
-        down, and a rider with a rating less than 1500 at the end of the season will see their
-        rating go up.
-        '''
 
         self.races.append(Race('New Season', None, None, None))
-        for rider in self.riders:
-            rider.new_season(regression_to_mean_weight)
+        for name in self.riders:
+            self.riders[name].new_season(regression_to_mean_weight)
         
         self.save_system(date(year = year, month = 1, day = 1))
     
     def save_system(self, date):
-        '''
+        """
         Save rating data as a timeseries for each rider in the system.
-        '''
+        """
 
         # loop through every rider in the system and add their current rating to the cumulative data
-        for rider in self.riders:
-            if rider.name in self.rating_data:
-                self.rating_data[rider.name].append(rider.rating)
+        for name in self.riders:
+            
+            if name in self.rating_data:
+                self.rating_data[name].append(self.riders[name].rating)
+            
+            # add a new key and array to the rating_data dict, and make sure that all keys
+            # have corresponding arrays of the same length by filling the array with the
+            # default initial Elo value and then adding their most recent rating
             else:
-                self.rating_data[rider.name] = [1500] * len(self.rating_data['year']) + [rider.rating]
+                self.rating_data[name] = [
+                    entities.DEFAULT_INITIAL_RATING
+                ] * len(self.rating_data['year']) + [self.riders[name].rating]
         
         # add a new date to the dict
         self.rating_data['year'].append(date.year)
@@ -229,21 +225,22 @@ class Velo:
     def save_system_data(self, rating_type, base_fname = 'data/system_data'):
         pd.DataFrame(data = self.rating_data).to_csv(f'{base_fname}_{rating_type}.csv', index = False)
 
-    def print_system(self, curr_year, rider_selection_method, min_rating = 1400):
+    def print_system(self, curr_year, min_rating = entities.DEFAULT_INITIAL_RATING, max_places = 50):
         '''
         Print the rankings as they currently stand.
         '''
-
-        # determine if system will print rankings of all riders, or a specific list of riders
-        riders_to_rank = [rider for rider in self.riders if rider_selection_method(rider)]
         
-        # sort the list of riders by rating
-        riders_sorted = sorted(riders_to_rank, key = lambda r: r.rating, reverse = True)
+        # sort the list of rider objects by rating
+        riders_sorted = sorted(
+            list(self.riders.values()),
+            key = lambda rider: rider.rating,
+            reverse = True
+        )
 
         # now print each rider and their place
         place = 1
         for rider in riders_sorted:
-            if rider.rating < min_rating or place > 50: 
+            if rider.rating < min_rating or place > max_places: 
                 break
 
             # continue, if the rider hasn't competed in the current year or the year before
