@@ -11,7 +11,7 @@ from termcolor import colored
 # local
 from ratings import entities
 from ratings.entities import Rider, Race
-from ratings.utils import k_decay
+from ratings import utils
 
 # ====== Column name constants ======
 PLACES_COL = 'place'
@@ -84,7 +84,7 @@ class Velo:
         
         return rider
     
-    def simulate_race(self, race_name, results, race_weight, timegap_multiplier, k_func = k_decay):
+    def simulate_race(self, race_name, results, race_weight, timegap_multiplier, k_func = utils.k_decay):
         """
         Apply the affect of the given race to the Elo system. Race simulated as a series of head-to-head
         matchups evaluated as if they all occurred simultaneously.
@@ -154,34 +154,35 @@ class Velo:
                 )
 
     def h2h(self, rider1, rider1_time, rider2, rider2_time, matchup_weight, timegap_multiplier):
-        '''
-        Simulate the head to head matchup between two given riders, and adjust their elo deltas
-        accordingly.
-        '''
+        """
+        Calculate Elo delta from a single head to head and attribute the delta to each rider.
+        """
 
         # get respective win/loss probabilities
-        rider1_p, rider2_p = _get_win_loss_probabilities(rider1, rider2)
+        rider1_p, rider2_p = utils.get_elo_probabilities(
+            rider1, rider2, self.elo_q_base, self.elo_q_exponent_denom
+        )
 
-        # set rider "scores" (assumes rider1 beat rider2 if times are equal)
-        rider1_score = 1 if rider1_time <= rider2_time else 0
-        rider2_score = 1 if rider2_time < rider1_time else 0
+        # set rider "scores" (assumes rider1 defeats rider2)
+        rider1_score = 1
+        rider2_score = 0
 
         # get margin of victory multiplier
-        margvict_mult = _get_margvict_mult(rider1, rider1_time, rider2, rider2_time, timegap_multiplier)
+        margvict_factor = utils.get_marg_victory_factor(
+            rider1, rider1_time, rider2, rider2_time, timegap_multiplier
+        )
 
         # get elo deltas for each rider
-        rider1_delta = matchup_weight * margvict_mult * (rider1_score - rider1_p)
-        rider2_delta = matchup_weight * margvict_mult * (rider2_score - rider2_p)
+        rider1_delta = matchup_weight * margvict_factor * (rider1_score - rider1_p)
+        rider2_delta = matchup_weight * margvict_factor * (rider2_score - rider2_p)
 
         # update rider elo deltas
         rider1.update_delta(rider1_delta)
         rider2.update_delta(rider2_delta)
 
         # update wins/losses
-        if rider1_score == 1: rider1.increment_wins()
-        else: rider1.increment_losses()
-        if rider2_score == 1: rider2.increment_wins()
-        else: rider2.increment_losses()
+        rider1.increment_wins()
+        rider2.increment_losses()
 
     def apply_all_deltas(self, race_name, race_weight, datestamp):
         for name in self.riders:
@@ -303,40 +304,6 @@ class Velo:
                         else:
                             existing_probabilities[quality_thresh][thresh].append(0)
         return existing_probabilities
-
-def _get_win_loss_probabilities(rider1, rider2):
-    '''
-    Utility method for helping with calculating rider Elos.
-    '''
-
-    # get each competitor's Q value
-    rider1_q = np.power(ELO_Q_BASE, rider1.rating / ELO_Q_EXPONENT_DENOM)
-    rider2_q = np.power(ELO_Q_BASE, rider2.rating / ELO_Q_EXPONENT_DENOM)
-
-    # get the probabilities and return
-    rider1_p = rider1_q / (rider1_q + rider2_q)
-    rider2_p = rider2_q / (rider1_q + rider2_q)
-    return (rider1_p, rider2_p)
-
-def _get_margvict_mult(rider1, rider1_time, rider2, rider2_time, time_gap_multiplier):
-    '''
-    ASSUMES rider1 is the winning rider and rider2 is the losing rider. Calculates a multiplier
-    to have rating changes take margin of victory into account.
-    '''
-
-    # expand time difference with multiplier
-    score_diff = (rider1_time - rider2_time) * time_gap_multiplier
-    
-    # get difference in ratings
-    rating_diff = rider1.rating - rider2.rating
-    
-    # try to calculate the score multiplier
-    try:
-        return math.log(score_diff + 1) * (2.2 / ((rating_diff * 0.001) + 2.2))
-    
-    # if there is a problem, just return 1 so that the multiplier simply has no effect on calculations
-    except:
-        return 1
     
 def _get_improvement(rider):
 

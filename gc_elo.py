@@ -14,7 +14,7 @@ from ratings.Velo import Velo
 VERBOSE = True
 RESULTS_DATA_PATH = 'data/men_velodata.csv'
 RACE_WEIGHTS_PATH = 'data/men_races_data.json'  # path to weights for each race
-TIMEGAP_MULTIPLIER = 1  # weight given to margin of victory
+TIMEGAP_MULTIPLIER = 0.1  # weight given to margin of victory
 NEW_SEASON_REGRESS_WEIGHT = 0.4  # weight the degree to which rider scores converge to 1500 during off season
 RAW_RESULT_NUM_PRINTED = 15  # number of finishers printed in raw data per race if VERBOSE = True
 
@@ -80,7 +80,7 @@ for year in range(begin_year, end_year):
         elo.save_system(race_date)
         
         # simulate the race and add it to the rankings
-        rider_order = elo.simulate_race(race, race_data, race_weight, TIMEGAP_MULTIPLIER)
+        elo.simulate_race(race, race_data, race_weight, TIMEGAP_MULTIPLIER)
         
         # apply changes to rider elos
         elo.apply_all_deltas(race, race_weight, race_date)
