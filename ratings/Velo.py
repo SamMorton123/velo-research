@@ -85,20 +85,20 @@ class Velo:
         return rider
     
     def simulate_race(self, race_name, results, race_weight, timegap_multiplier, k_func = k_decay):
-        '''
-        Simulate a race as a series of head to head matchups between all participants in the race. This type
-        of treatment can be used on different cycling disciplines, such as GC results and TT results.
-        '''
+        """
+        Apply the affect of the given race to the Elo system. Race simulated as a series of head-to-head
+        matchups evaluated as if they all occurred simultaneously.
+        """
 
         # get race date
-        year = int(results[YEAR_COL].iloc[0])
-        month = int(results[MONTH_COL].iloc[0])
-        day = int(results[DAY_COL].iloc[0])
-        race_date = date(year = year, month = month, day = day)
+        race_date = date(
+            year = int(results[YEAR_COL].iloc[0]),
+            month = int(results[MONTH_COL].iloc[0]),
+            day = int(results[DAY_COL].iloc[0])
+        )
 
-        # add race to list of races
-        race_info = Race(race_name, race_weight, race_date, None)
-        self.races.append(race_info)
+        # add race object to list of races
+        self.races.append(Race(race_name, race_weight, race_date, None))
 
         # init list of rider order
         rider_order = []
