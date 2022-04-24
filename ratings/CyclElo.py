@@ -211,7 +211,7 @@ class CyclElo:
         self.rating_data['month'].append(date.month)
         self.rating_data['day'].append(date.day)
     
-    def save_system_data(self, rating_type, base_fname = 'system_data'):
+    def save_system_data(self, rating_type, base_fname = 'data/system_data'):
         pd.DataFrame(data = self.rating_data).to_csv(f'{base_fname}_{rating_type}.csv', index = False)
 
     def print_system(self, curr_year, rider_selection_method, min_rating = 1500):
