@@ -14,7 +14,7 @@ import ratings.rider_selection as rs
 # ===== Script Parameters ===== #
 VERBOSE = True
 RESULTS_DATA_PATH = 'data/women_velodata.csv'
-RACE_WEIGHTS_PATH = 'data/women_race_data.json'  # path to weights for each race
+RACE_WEIGHTS_PATH = 'data/women_races_data.json'  # path to weights for each race
 TIMEGAP_MULTIPLIER = 3  # weight given to margin of victory
 NEW_SEASON_REGRESS_WEIGHT = 0.4  # weight the degree to which rider scores converge to 1500 during off season
 RIDER_SELECTION_METHOD = rs.select_all  # how the system determines which riders to save/print data for in the system
