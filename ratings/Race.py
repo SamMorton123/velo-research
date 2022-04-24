@@ -1,7 +1,3 @@
-'''
-Race class for storing data regarding individual races.
-'''
-
 class Race:
     def __init__(self, name, weight, datestamp, place, classification = None):
 

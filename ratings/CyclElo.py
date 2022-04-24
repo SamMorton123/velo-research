@@ -10,8 +10,7 @@ from termcolor import colored
 
 # local
 from ratings.decay_funcs import k_decay
-from ratings.Race import Race
-from ratings.Rider import Rider
+from ratings.utils import Rider, Race
 
 # ====== Column name constants ======
 PLACES_COL = 'place'
