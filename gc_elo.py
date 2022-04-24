@@ -8,13 +8,13 @@ import pandas as pd
 
 # local
 import utils
-from ratings.CyclElo import CyclElo
+from ratings.CyclElo import Velo
 import ratings.rider_selection as rs
 
 # ===== Script Parameters ===== #
 VERBOSE = True
-RESULTS_DATA_PATH = 'data/velodata.csv'
-RACE_WEIGHTS_PATH = 'data/races_data.json'  # path to weights for each race
+RESULTS_DATA_PATH = 'data/men_velodata.csv'
+RACE_WEIGHTS_PATH = 'data/men_races_data.json'  # path to weights for each race
 TIMEGAP_MULTIPLIER = 1  # weight given to margin of victory
 NEW_SEASON_REGRESS_WEIGHT = 0.4  # weight the degree to which rider scores converge to 1500 during off season
 RIDER_SELECTION_METHOD = rs.select_all  # how the system determines which riders to save/print data for in the system
@@ -50,7 +50,7 @@ with open(RACE_WEIGHTS_PATH) as f:
 f.close()
 
 # init elo system variable
-elo = CyclElo()
+elo = Velo()
 
 # loop through each year in the gc data
 begin_year = 2022

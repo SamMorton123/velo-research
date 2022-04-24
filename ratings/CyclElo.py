@@ -1,9 +1,7 @@
-'''
-V2 of the cycling Elo class, but no longer a subclass of my
-original Elo implementation for track and field. Contains methods
-necessary for updating, managing, and printing the Elo system as
-new results come in and change the rankings.
-'''
+"""
+New gen of the cycling elo class. Changing the name to Velo (V-Elo), and consolidating
+functionality to make it a much more coherent module.
+"""
 
 from datetime import date, timedelta
 import numpy as np
@@ -11,11 +9,11 @@ import pandas as pd
 from termcolor import colored
 
 # local
-from ratings.decay_funcs import logistic_decay, linear2, linear3, piecewise
+from ratings.decay_funcs import k_decay
 from ratings.Race import Race
 from ratings.Rider import Rider
 
-# column names
+# ====== Column name constants ======
 PLACES_COL = 'place'
 RIDER_COL = 'rider'
 AGE_COL = 'age'
@@ -24,18 +22,36 @@ YEAR_COL = 'year'
 MONTH_COL = 'month'
 DAY_COL = 'day'
 
-# elo math constants
+# ===== Elo system constants ======
 ELO_Q_BASE = 10
 ELO_Q_EXPONENT_DENOM = 400
+
+# ===== Constant defaults =====
+ALPHA_DEFAULT = 1.5
+BETA_DEFAULT = 1.8
+SEASON_TURNOVER_DEFAULT = 0.4
 
 PRINT_RIDER_NUM_TOP_PLACINGS = 1
 TOP_PLACING_DEFINITION = 10
 
-class CyclElo:
+class Velo:
     
-    def __init__(self):
+    def __init__(self, decay_alpha: float = 1.5, decay_beta: float = 1.8,
+            season_turnover_default: float = SEASON_TURNOVER_DEFAULT, 
+            elo_q_base: int = ELO_Q_BASE, elo_q_exponent_denom: int = ELO_Q_EXPONENT_DENOM):
+
+        # collect args as instance variables
+        self.decay_alpha = decay_alpha
+        self.decay_beta = decay_beta
+        self.season_turnover_default = season_turnover_default
+        self.elo_q_base = elo_q_base
+        self.elo_q_exponent_denom = elo_q_exponent_denom
+         
+        # init arrays to track rider and race objects
         self.riders = []
         self.races = []
+
+        # init dictionary to track rating data over time
         self.rating_data = {'year': [], 'month': [], 'day': []}
     
     def find_rider(self, name):
@@ -66,7 +82,7 @@ class CyclElo:
         
         return rider
     
-    def simulate_race(self, race_name, results, race_weight, timegap_multiplier, k_func = linear3):
+    def simulate_race(self, race_name, results, race_weight, timegap_multiplier, k_func = k_decay):
         '''
         Simulate a race as a series of head to head matchups between all participants in the race. This type
         of treatment can be used on different cycling disciplines, such as GC results and TT results.
@@ -214,7 +230,7 @@ class CyclElo:
     def save_system_data(self, rating_type, base_fname = 'data/system_data'):
         pd.DataFrame(data = self.rating_data).to_csv(f'{base_fname}_{rating_type}.csv', index = False)
 
-    def print_system(self, curr_year, rider_selection_method, min_rating = 1500):
+    def print_system(self, curr_year, rider_selection_method, min_rating = 1400):
         '''
         Print the rankings as they currently stand.
         '''
