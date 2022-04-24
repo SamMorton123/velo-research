@@ -8,7 +8,7 @@ import pandas as pd
 
 # local
 import utils
-from ratings.CyclElo import Velo
+from ratings.Velo import Velo
 import ratings.rider_selection as rs
 
 # ===== Script Parameters ===== #

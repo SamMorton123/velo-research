@@ -9,8 +9,8 @@ import pandas as pd
 from termcolor import colored
 
 # local
-from ratings.decay_funcs import k_decay
-from ratings.utils import Rider, Race
+from ratings.entities import Rider, Race
+from ratings.utils import k_decay
 
 # ====== Column name constants ======
 PLACES_COL = 'place'
