@@ -185,10 +185,18 @@ class Velo:
         rider2.increment_losses()
 
     def apply_all_deltas(self, race_name, race_weight, datestamp):
+        """
+        Apply all outstanding Elo deltas for riders in the system.
+        """
+
         for name in self.riders:
             self.riders[name].resolve_delta(race_name, race_weight, datestamp)
 
     def new_season_regression(self, year, regression_to_mean_weight = 0.5):
+        """
+        Regress all rider ratings back to the default initial rating at the onset
+        of a new season.
+        """
 
         self.races.append(Race('New Season', None, None, None))
         for name in self.riders:
