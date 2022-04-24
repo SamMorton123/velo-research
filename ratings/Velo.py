@@ -231,9 +231,9 @@ class Velo:
     def save_system_data(self, rating_type, base_fname = 'data/system_data'):
         pd.DataFrame(data = self.rating_data).to_csv(f'{base_fname}_{rating_type}.csv', index = False)
 
-    def print_system(self, curr_year, min_rating = entities.DEFAULT_INITIAL_RATING, max_places = 50):
+    def print_system(self, curr_year, min_rating = entities.DEFAULT_INITIAL_RATING, printing_limit = 50):
         '''
-        Print the rankings as they currently stand.
+        Rank the riders by their system and print.
         '''
         
         # sort the list of rider objects by rating
@@ -246,79 +246,27 @@ class Velo:
         # now print each rider and their place
         place = 1
         for rider in riders_sorted:
-            if rider.rating < min_rating or place > max_places: 
+            
+            # only continue printing if the rider rating is above the threshold
+            # and we haven't hit the page limit
+            if rider.rating < min_rating or place > printing_limit: 
                 break
 
-            # continue, if the rider hasn't competed in the current year or the year before
+            # rider must have competed in the current year or the year before in order
+            # to be printed
             if rider.most_recent_active_year < curr_year - 1:
                 continue
-            
-            # continue, if the rider hasn't placed high enough a sufficient number of times
-            sorted_results = sorted(rider.race_history, key = lambda race: (race.place is None, race.place))
-            if (len(sorted_results) < PRINT_RIDER_NUM_TOP_PLACINGS or
-                sorted_results[PRINT_RIDER_NUM_TOP_PLACINGS - 1].place is None or
-                sorted_results[PRINT_RIDER_NUM_TOP_PLACINGS - 1].place > TOP_PLACING_DEFINITION):
-                continue
 
-            # get the rider's delta, and add color
+            # get the rider's most recent Elo delta, and add color
             delta = round(rider.rating_history[-1][0] - rider.rating_history[-2][0], 2)
-            if delta == 0:
-                delta = ''
+            if delta == 0: delta = ''
             else:
                 color = 'green' if delta > 0 else 'red'
                 delta = colored(delta, color)
 
             print(
                 f'{place}.', f'{rider.name} - {round(rider.rating, 2)};', 
-                f'Active: {rider.most_recent_active_year}, Age: {rider.age}', delta,
-                f'Top {TOP_PLACING_DEFINITION}s:', len([r for r in sorted_results if r.place is not None and r.place <= TOP_PLACING_DEFINITION])
+                f'Active: {rider.most_recent_active_year}, Age: {rider.age}', delta
             )
 
             place += 1
-    
-    def print_most_improved(self, riders_printed = 20):
-        '''
-        Print the most improved riders as a percentage of their rating at the start
-        of the season.
-        '''
-
-        print('\nMost Improved:\n')
-        
-
-        # get riders and their percentage improvements
-        riders_p_improvements = [
-            (rider, _get_improvement(rider)) for rider in self.riders
-        ]
-
-        # sort by improvement
-        riders_p_improvements.sort(key = lambda t: t[1], reverse = True)
-        for i in range(min(riders_printed, len(riders_p_improvements))):
-            print(f'{i + 1}. {riders_p_improvements[i][0].name} - ({riders_p_improvements[i][1]}%)')
-
-    
-    @staticmethod
-    def top_probabilities(existing_probabilities, rider_order):
-        '''
-        Still in development. Goal: generating probabilities of a rider doing well in a race
-        based on their rating and the ratings of the other competitors in the race.
-        '''
-
-        for quality_thresh in existing_probabilities:
-            for thresh in existing_probabilities[quality_thresh]:
-                for rider in rider_order:
-                    if rider.rating >= quality_thresh:
-                        if rider_order.index(rider) < thresh:
-                            existing_probabilities[quality_thresh][thresh].append(1)
-                        else:
-                            existing_probabilities[quality_thresh][thresh].append(0)
-        return existing_probabilities
-    
-def _get_improvement(rider):
-
-    # get rating from beginning of year
-    for i in range(len(rider.rating_history) - 1, -1, -1):
-        if rider.rating_history[i][1] == 'newseason':
-            initial_rating = rider.rating_history[i][0]
-            break
-
-    return round((rider.rating - initial_rating) / initial_rating * 100, 2)
