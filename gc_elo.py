@@ -53,7 +53,9 @@ f.close()
 elo = CyclElo()
 
 # loop through each year in the gc data
-for year in range(2007, 2023):
+begin_year = 2022
+end_year = 2023  # doesn't include this year
+for year in range(begin_year, end_year):
     
     print(f'\n====={year}=====\n')
     
@@ -93,6 +95,11 @@ for year in range(2007, 2023):
 
             # print the elo system after this race is added
             elo.print_system(year, RIDER_SELECTION_METHOD, min_rating = 1500)
+        
+        elo.save_system(race_date)
     
     # regress scores back to the mean of 1500 at the start of each season
-    elo.new_season_regression(year, regression_to_mean_weight = NEW_SEASON_REGRESS_WEIGHT)
+    if year < end_year - 1:
+        elo.new_season_regression(year, regression_to_mean_weight = NEW_SEASON_REGRESS_WEIGHT)
+
+elo.save_system_data('gc_men')
