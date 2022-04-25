@@ -7,14 +7,14 @@ import json
 import pandas as pd
 
 # local
-import utils
+from ratings import utils
 from ratings.Velo import Velo
 
 # ===== Script Parameters ===== #
 VERBOSE = True
 RESULTS_DATA_PATH = 'data/men_velodata.csv'
 RACE_WEIGHTS_PATH = 'data/men_races_data.json'  # path to weights for each race
-TIMEGAP_MULTIPLIER = 0.1  # weight given to margin of victory
+TIMEGAP_MULTIPLIER = None  # weight given to margin of victory
 NEW_SEASON_REGRESS_WEIGHT = 0.4  # weight the degree to which rider scores converge to 1500 during off season
 RAW_RESULT_NUM_PRINTED = 15  # number of finishers printed in raw data per race if VERBOSE = True
 
@@ -48,7 +48,7 @@ with open(RACE_WEIGHTS_PATH) as f:
 f.close()
 
 # init elo system variable
-elo = Velo()
+elo = Velo(decay_alpha = 1.5, decay_beta = 1.8)
 
 # loop through each year in the gc data
 begin_year = 2022
@@ -58,7 +58,7 @@ for year in range(begin_year, end_year):
     print(f'\n====={year}=====\n')
     
     # prepare and isolate data for the given year
-    year_data = utils.prepare_year_data(DATA, year, typ = 'gc')
+    year_data = utils.prepare_year_data(DATA, year, race_type = 'gc')
     
     # loop through each race in the current year's data
     for race in year_data['name'].unique():

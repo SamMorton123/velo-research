@@ -2,8 +2,13 @@
 Support module for Elo system.
 """
 
+from datetime import date
 import math
 import numpy as np
+
+PLACES_COL = 'place'
+RIDER_COL = 'rider'
+TIME_COL = 'time'
 
 
 def k_decay(K: float, p1: int, p2: int, alpha: float = 1.5, beta: float = 1.8):
@@ -65,3 +70,77 @@ def get_marg_victory_factor(rider1, rider1_time, rider2, rider2_time, time_gap_m
     rating_diff = rider1.rating - rider2.rating
 
     return math.log(time_factor + 2) * (2.2 / ((rating_diff * 0.001) + 2.2))
+
+def prepare_year_data(data, year, race_type = 'gc', sort = True):
+    """
+    Given a dataframe and a year, return a dataframe containing GC data for the
+    given year.
+    """
+
+    year_data = data[data['year'] == year]
+    year_data = year_data[year_data['type'] == race_type]
+    
+    if sort:
+        year_data.sort_values(by = ['month', 'day'], inplace = True)
+    
+    return year_data
+
+def prepare_race_data(data, race, stage = None):
+    """
+    Given a dataframe containing race results for a given year, isolate just the
+    data for the given race.
+    """
+
+    race_data = data[data['name'] == race].reset_index()
+    if stage is not None:
+        race_data = race_data[race_data['stage'] == stage]
+
+    # ensure there is no duplicate data by checking rider results placings are
+    # listed in the proper order
+    for i in range(1, len(race_data.index)):
+
+        if race_data.loc[race_data.index[i], 'place'] < race_data.loc[race_data.index[i - 1], 'place']:
+            race_data = race_data.iloc[0: i, :]
+            break
+
+    # remove riders banned for PED violations from the results
+    return remove_banned_riders(race_data)
+
+def get_race_date(race_data):
+    """
+    Given dataframe of race data, return data as datetime date object.
+    """
+
+    race_year = int(race_data['year'].iloc[0])
+    month = int(race_data['month'].iloc[0])
+    day = int(race_data['day'].iloc[0])
+    return date(year = race_year, month = month, day = day)
+
+def remove_banned_riders(df):
+    """
+    Remove riders from the results who was DQ'd from the race.
+    """
+
+    # reset the index of the df
+    df = df.reset_index()
+    
+    # init list to track indices to drop from the df
+    to_drop = []
+    
+    # if a rider has been DQ'd, the following rider in the table will
+    # have the same place as them, so this is a way to detect who to
+    # remove from results
+    prior_place = None
+    for i in range(len(df.index)):
+        
+        # get the current rider's place
+        place = df['place'].iloc[i]
+        
+        # compare with the previous rider's place (if i == 0 this just won't catch)
+        if place == prior_place:
+            to_drop.append(i - 1)
+        
+        prior_place = place
+
+    # return the df with the DQ'd riders removed
+    return df.drop(labels = to_drop)
