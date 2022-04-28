@@ -125,6 +125,9 @@ class Velo:
                 rider1 = self.add_new_rider(rider1_name, rider1_age)
                 rider2 = self.add_new_rider(rider2_name, rider2_age)
 
+                if rider1_place == 1 and rider2_place == 2:
+                    print(f'\n{race_name}:', rider1.name, rider1.rating, rider2.name, rider2.rating, utils.get_elo_probabilities(rider1.rating, rider2.rating, self.elo_q_base, self.elo_q_exponent_denom), '\n')
+
                 # add to rider race histories
                 rider1.add_new_race(race_name, race_weight, race_date, rider1_place)
                 rider2.add_new_race(race_name, race_weight, race_date, rider2_place)
@@ -160,7 +163,7 @@ class Velo:
 
         # get respective win/loss probabilities
         rider1_p, rider2_p = utils.get_elo_probabilities(
-            rider1, rider2, self.elo_q_base, self.elo_q_exponent_denom
+            rider1.rating, rider2.rating, self.elo_q_base, self.elo_q_exponent_denom
         )
 
         # set rider "scores" (assumes rider1 defeats rider2)

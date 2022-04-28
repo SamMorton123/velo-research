@@ -5,6 +5,7 @@ Support module for Elo system.
 from datetime import date
 import math
 import numpy as np
+import pandas as pd
 
 PLACES_COL = 'place'
 RIDER_COL = 'rider'
@@ -33,7 +34,7 @@ def k_decay(K: float, p1: int, p2: int, alpha: float = 1.5, beta: float = 1.8):
 
     return out
 
-def get_elo_probabilities(rider1, rider2, q_base, q_exponent_denom):
+def get_elo_probabilities(rider1_rating, rider2_rating, q_base, q_exponent_denom):
     """
     Rider Elo deltas are dependent on the ratings of each of the riders prior to
     the head-to-head result. This method returns pseudo-probabilities of victory
@@ -41,8 +42,8 @@ def get_elo_probabilities(rider1, rider2, q_base, q_exponent_denom):
     """
 
     # get each competitor's Q value
-    rider1_q = np.power(q_base, rider1.rating / q_exponent_denom)
-    rider2_q = np.power(q_base, rider2.rating / q_exponent_denom)
+    rider1_q = np.power(q_base, rider1_rating / q_exponent_denom)
+    rider2_q = np.power(q_base, rider2_rating / q_exponent_denom)
 
     # get the probabilities and return
     rider1_p = rider1_q / (rider1_q + rider2_q)
@@ -77,34 +78,50 @@ def prepare_year_data(data, year, race_type = 'gc', sort = True):
     given year.
     """
 
+    # if race type == itt, then also include prologues
+    if race_type == 'itt':
+        race_type_lst = [race_type, 'prologue']
+    else:
+        race_type_lst = [race_type]
+
     year_data = data[data['year'] == year]
-    year_data = year_data[year_data['type'] == race_type]
+    year_data = year_data[year_data['type'].isin(race_type_lst)]
     
     if sort:
         year_data.sort_values(by = ['month', 'day'], inplace = True)
     
     return year_data
 
-def prepare_race_data(data, race, stage = None):
+def prepare_race_data(data, race):
     """
     Given a dataframe containing race results for a given year, isolate just the
-    data for the given race.
+    data for the given race, split by different stages.
     """
 
-    race_data = data[data['name'] == race].reset_index()
-    if stage is not None:
-        race_data = race_data[race_data['stage'] == stage]
+    race_data = data[data['name'] == race]
+    
+    stages_data = []
+    stages = pd.unique(race_data['stage'])
+    
+    if len(stages) > 1:
+        for stage in stages:
+            stages_data.append(race_data[race_data['stage'] == stage])
+    else:
+        stages_data.append(race_data)
 
-    # ensure there is no duplicate data by checking rider results placings are
-    # listed in the proper order
-    for i in range(1, len(race_data.index)):
+    for stage_data in stages_data:
+        
+        # ensure there is no duplicate data by checking rider results placings are
+        # listed in the proper order
+        for i in range(1, len(stage_data.index)):
 
-        if race_data.loc[race_data.index[i], 'place'] < race_data.loc[race_data.index[i - 1], 'place']:
-            race_data = race_data.iloc[0: i, :]
-            break
+            if stage_data.loc[stage_data.index[i], 'place'] < stage_data.loc[stage_data.index[i - 1], 'place']:
+                stage_data = stage_data.iloc[0: i, :]
+                break
+        
+        stage_data = remove_banned_riders(stage_data)
 
-    # remove riders banned for PED violations from the results
-    return remove_banned_riders(race_data)
+    return stages_data
 
 def get_race_date(race_data):
     """

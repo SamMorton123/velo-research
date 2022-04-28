@@ -7,7 +7,7 @@ import utils
 
 # arg checking constants
 EXPECTED_N_ARGS = 4
-MIN_YEAR = 2009
+MIN_YEAR = 2007
 MAX_YEAR = 2023
 ACCEPTED_RACE_TYPE_CATS = ['stage-races', 'one-day-races']
 ACCEPTED_GENDER_CATS = ['men', 'women']
@@ -26,8 +26,9 @@ ACCEPTED_GENDER_CATS = ['men', 'women']
 if len(sys.argv) < EXPECTED_N_ARGS:
     raise Exception(f'Expected at least {EXPECTED_N_ARGS} arguments.')
 
-year = sys.argv[1]
-if int(year) < MIN_YEAR or int(year) > MAX_YEAR:
+try: year = int(sys.argv[1])
+except: raise Exception(f'Given {year} must be an integer.')
+if year < MIN_YEAR or year > MAX_YEAR:
     raise Exception(f'Year must be between {MIN_YEAR} and {MAX_YEAR}. {year} given.')
 
 gender = sys.argv[2]
@@ -58,7 +59,7 @@ if len(race_names) == 0:
     races_fname = M_RACES_PATH if gender == 'men' else W_RACES_PATH
     with open(races_fname) as f:
         # load data for race type
-        race_data = json.load(f)[race_type][year] 
+        race_data = json.load(f)[race_type][str(year)] 
     f.close()
 
     # add races from race data to race_names
