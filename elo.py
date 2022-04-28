@@ -67,13 +67,13 @@ elo = Velo(decay_alpha = 1.5, decay_beta = 1.8)
 
 # loop through each year in the gc data
 for year in range(beg_year, end_year):
-
-    print(f'\n====={year}=====\n')
     
     # prepare and isolate data for the given year
     year_data = utils.prepare_year_data(DATA, year, race_type = race_type)
     if len(year_data) == 0:
         continue
+
+    print(f'\n====={year}=====\n')
     
     # loop through each race in the current year's data
     for race in year_data['name'].unique():

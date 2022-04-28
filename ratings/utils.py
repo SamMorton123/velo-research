@@ -109,17 +109,17 @@ def prepare_race_data(data, race):
     else:
         stages_data.append(race_data)
 
-    for stage_data in stages_data:
+    for i in range(len(stages_data)):
         
         # ensure there is no duplicate data by checking rider results placings are
         # listed in the proper order
-        for i in range(1, len(stage_data.index)):
+        for j in range(1, len(stages_data[i].index)):
 
-            if stage_data.loc[stage_data.index[i], 'place'] < stage_data.loc[stage_data.index[i - 1], 'place']:
-                stage_data = stage_data.iloc[0: i, :]
+            if stages_data[i].loc[stages_data[i].index[j], 'place'] < stages_data[i].loc[stages_data[i].index[j - 1], 'place']:
+                stages_data[i] = stages_data[i].iloc[0: j, :]
                 break
-        
-        stage_data = remove_banned_riders(stage_data)
+
+        stages_data[i] = remove_banned_riders(stages_data[i])
 
     return stages_data
 
