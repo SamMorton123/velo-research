@@ -10,6 +10,10 @@ import pandas as pd
 PLACES_COL = 'place'
 RIDER_COL = 'rider'
 TIME_COL = 'time'
+WORLD_OLYMPICS_ITT_NAMES = [
+    'world-championship-itt', 'olympic-games-itt',
+    'world-championship-itt-we', 'olympic-games-we-itt'
+]
 
 
 def k_decay(K: float, p1: int, p2: int, alpha: float = 1.5, beta: float = 1.8):
@@ -78,14 +82,21 @@ def prepare_year_data(data, year, race_type = 'gc', sort = True):
     given year.
     """
 
-    # if race type == itt, then also include prologues
+    # extract data for the given year
+    year_data = data[data['year'] == year]
+    
     if race_type == 'itt':
+
         race_type_lst = [race_type, 'prologue']
+
+        worlds_olympics_itts = year_data[year_data['name'].isin(WORLD_OLYMPICS_ITT_NAMES)]
+        year_data = year_data[year_data['type'].isin(race_type_lst)]
+
+        year_data = pd.concat([year_data, worlds_olympics_itts])
+    
     else:
         race_type_lst = [race_type]
-
-    year_data = data[data['year'] == year]
-    year_data = year_data[year_data['type'].isin(race_type_lst)]
+        year_data = year_data[year_data['type'].isin(race_type_lst)]
     
     if sort:
         year_data.sort_values(by = ['month', 'day'], inplace = True)

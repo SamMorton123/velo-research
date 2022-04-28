@@ -21666,81 +21666,257 @@ easytoys-bloeizone-fryslan-tour,final-gc,F-2.1,,2022.0,3.0,5.0,gc,,,-,,,106.0,SC
 easytoys-bloeizone-fryslan-tour,final-gc,F-2.1,,2022.0,3.0,5.0,gc,,,-,,,107.0,TIMMERMANS Iris,Watersley Race & Development CT,18.0,762.0
 easytoys-bloeizone-fryslan-tour,final-gc,F-2.1,,2022.0,3.0,5.0,gc,,,-,,,108.0,VAN DEN NOUWELAND Bente,Restore Cycling,18.0,770.0
 easytoys-bloeizone-fryslan-tour,final-gc,F-2.1,,2022.0,3.0,5.0,gc,,,-,,,109.0,ZWAAN Sophia,Watersley Race & Development CT,18.0,798.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,1.0,VAN VLEUTEN Annemiek,Movistar Team,39,0.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,2.0,BROWN Grace,FDJ Nouvelle-Aquitaine Futuroscope,29,43.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,3.0,VOLLERING Demi,Team SD Worx,25,43.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,4.0,MOOLMAN Ashleigh,Team SD Worx,36,43.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,5.0,LONGO BORGHINI Elisa,Trek - Segafredo,30,43.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,6.0,CAVALLI Marta,FDJ Nouvelle-Aquitaine Futuroscope,24,47.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,7.0,SIERRA Arlenis,Movistar Team,29,118.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,8.0,LIPPERT Liane,Team DSM,24,118.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,9.0,NIEWIADOMA Katarzyna,Canyon//SRAM Racing,27,118.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,10.0,SPRATT Amanda,Team BikeExchange - Jayco,34,118.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,11.0,ROOIJAKKERS Pauliena,Canyon//SRAM Racing,28,118.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,12.0,LABOUS Juliette,Team DSM,23,125.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,13.0,GARCÍA Mavi,UAE Team ADQ,38,175.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,14.0,KOSTER Anouska,Team Jumbo-Visma,28,175.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,15.0,PALADIN Soraya,Canyon//SRAM Racing,28,175.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,16.0,VAN ANROOIJ Shirin,Trek - Segafredo,20,175.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,17.0,SANTESTEBAN Ane,Team BikeExchange - Jayco,31,175.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,18.0,FISHER-BLACK Niamh,Team SD Worx,21,175.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,19.0,KASTELIJN Yara,Plantur-Pura,24,175.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,20.0,MUZIC Évita,FDJ Nouvelle-Aquitaine Futuroscope,22,175.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,21.0,REUSSER Marlen,Team SD Worx,30,175.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,22.0,HENDERSON Anna,Team Jumbo-Visma,23,175.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,23.0,THOMAS Leah,Trek - Segafredo,32,175.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,24.0,PINTAR Urša,UAE Team ADQ,36,175.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,25.0,LEVENEZ Sandra,Cofidis Women Team,42,175.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,26.0,VAN DE VELDE Julie,Plantur-Pura,28,181.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,27.0,MARTÍN Sara,Movistar Team,23,268.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,28.0,HONSINGER Clara,EF Education-TIBCO-SVB,24,268.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,29.0,CHABBEY Elise,Canyon//SRAM Racing,29,289.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,30.0,VAS Blanka,Team SD Worx,20,289.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,31.0,KIRCHMANN Leah,Team DSM,31,289.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,32.0,COSTON Morgane,Arkéa Pro Cycling Team,31,289.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,33.0,MANLY Alexandra,Team BikeExchange - Jayco,26,289.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,34.0,MORICHON Anais,Arkéa Pro Cycling Team,22,289.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,35.0,PATIÑO Paula Andrea,Movistar Team,25,289.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,36.0,BARIL Olivia,Valcar - Travel & Service,24,289.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,37.0,MAGNALDI Erica,UAE Team ADQ,29,289.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,38.0,KRAAK Amber,Team Jumbo-Visma,27,289.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,39.0,HAMMES Kathrin,EF Education-TIBCO-SVB,33,289.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,40.0,BRAND Lucinda,Trek - Segafredo,32,289.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,41.0,BIRIUKOVA Yuliia,Arkéa Pro Cycling Team,24,289.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,42.0,DRONOVA-BALABOLINA Tamara,Roland Cogeas Edelweiss Squad,28,369.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,43.0,HOLDEN Elizabeth,Le Col - Wahoo,24,369.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,44.0,LOWDEN Joscelin,Uno-X Pro Cycling Team,34,369.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,45.0,LUDWIG Hannah,Uno-X Pro Cycling Team,22,369.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,46.0,SCHOENS Quinty,Parkhotel Valkenburg,23,369.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,47.0,NEYLAN Rachel,Cofidis Women Team,40,369.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,48.0,AMIALIUSIK Alena,Canyon//SRAM Racing,33,369.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,49.0,WILLIAMS Georgia,Team BikeExchange - Jayco,28,369.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,50.0,HARVEY Mikayla,Canyon//SRAM Racing,23,369.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,51.0,AALERUD Katrine,Movistar Team,27,500.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,52.0,MACKAIJ Floortje,Team DSM,26,500.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,53.0,OTTESTAD Mie Bjørndal,Uno-X Pro Cycling Team,24,519.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,54.0,KERBAOL Cedrine,Cofidis Women Team,20,519.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,55.0,TON Quinty,Liv Racing Xstra,23,694.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,56.0,CLAES Lotte,Bingoal Casino - Chevalmeire - Van Eyck Sport,28,694.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,57.0,BERTIZZOLO Sofia,UAE Team ADQ,24,694.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,58.0,CHAPMAN Brodie,FDJ Nouvelle-Aquitaine Futuroscope,31,694.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,59.0,BREDEWOLD Mischa,Parkhotel Valkenburg,21,694.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,60.0,BUJAK Eugenia,UAE Team ADQ,32,777.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,61.0,JACKSON Alison,Liv Racing Xstra,33,777.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,62.0,STEPHENS Lauren,EF Education-TIBCO-SVB,35,777.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,63.0,VALLIERES Magdeleine,EF Education-TIBCO-SVB,20,777.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,64.0,BARALE Francesca,Team DSM,18,777.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,65.0,SOET Aafke,Team Jumbo-Visma,24,777.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,66.0,GEURTS Mijntje,Lotto Soudal Ladies,18,777.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,67.0,DOCX Mieke,Lotto Soudal Ladies,25,777.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,68.0,BUYSMAN Nina,Human Powered Health,24,777.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,69.0,GERRITSE Femke,Parkhotel Valkenburg,20,777.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,70.0,CARBONARI Anastasia,Valcar - Travel & Service,22,777.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,71.0,TOWERS Alice,Le Col - Wahoo,19,777.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,72.0,BERTON Nina,Andy Schleck - CP NVST - Immo Losch,20,777.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,73.0,JASKULSKA Marta,Liv Racing Xstra,22,777.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,74.0,WIEL Jade,FDJ Nouvelle-Aquitaine Futuroscope,22,777.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,75.0,STANNARD Elizabeth,Valcar - Travel & Service,24,777.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,76.0,YONAMINE Eri,Human Powered Health,30,777.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,77.0,KOREVAAR Jeanne,Liv Racing Xstra,25,777.0
-liege-bastogne-liege-femmes,NA,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,78.0,BARNES Hannah,Uno-X Pro Cycling Team,28,777.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,1.0,VAN VLEUTEN Annemiek,Movistar Team,39.0,0.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,2.0,BROWN Grace,FDJ Nouvelle-Aquitaine Futuroscope,29.0,43.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,3.0,VOLLERING Demi,Team SD Worx,25.0,43.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,4.0,MOOLMAN Ashleigh,Team SD Worx,36.0,43.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,5.0,LONGO BORGHINI Elisa,Trek - Segafredo,30.0,43.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,6.0,CAVALLI Marta,FDJ Nouvelle-Aquitaine Futuroscope,24.0,47.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,7.0,SIERRA Arlenis,Movistar Team,29.0,118.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,8.0,LIPPERT Liane,Team DSM,24.0,118.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,9.0,NIEWIADOMA Katarzyna,Canyon//SRAM Racing,27.0,118.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,10.0,SPRATT Amanda,Team BikeExchange - Jayco,34.0,118.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,11.0,ROOIJAKKERS Pauliena,Canyon//SRAM Racing,28.0,118.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,12.0,LABOUS Juliette,Team DSM,23.0,125.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,13.0,GARCÍA Mavi,UAE Team ADQ,38.0,175.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,14.0,KOSTER Anouska,Team Jumbo-Visma,28.0,175.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,15.0,PALADIN Soraya,Canyon//SRAM Racing,28.0,175.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,16.0,VAN ANROOIJ Shirin,Trek - Segafredo,20.0,175.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,17.0,SANTESTEBAN Ane,Team BikeExchange - Jayco,31.0,175.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,18.0,FISHER-BLACK Niamh,Team SD Worx,21.0,175.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,19.0,KASTELIJN Yara,Plantur-Pura,24.0,175.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,20.0,MUZIC Évita,FDJ Nouvelle-Aquitaine Futuroscope,22.0,175.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,21.0,REUSSER Marlen,Team SD Worx,30.0,175.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,22.0,HENDERSON Anna,Team Jumbo-Visma,23.0,175.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,23.0,THOMAS Leah,Trek - Segafredo,32.0,175.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,24.0,PINTAR Urša,UAE Team ADQ,36.0,175.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,25.0,LEVENEZ Sandra,Cofidis Women Team,42.0,175.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,26.0,VAN DE VELDE Julie,Plantur-Pura,28.0,181.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,27.0,MARTÍN Sara,Movistar Team,23.0,268.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,28.0,HONSINGER Clara,EF Education-TIBCO-SVB,24.0,268.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,29.0,CHABBEY Elise,Canyon//SRAM Racing,29.0,289.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,30.0,VAS Blanka,Team SD Worx,20.0,289.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,31.0,KIRCHMANN Leah,Team DSM,31.0,289.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,32.0,COSTON Morgane,Arkéa Pro Cycling Team,31.0,289.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,33.0,MANLY Alexandra,Team BikeExchange - Jayco,26.0,289.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,34.0,MORICHON Anais,Arkéa Pro Cycling Team,22.0,289.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,35.0,PATIÑO Paula Andrea,Movistar Team,25.0,289.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,36.0,BARIL Olivia,Valcar - Travel & Service,24.0,289.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,37.0,MAGNALDI Erica,UAE Team ADQ,29.0,289.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,38.0,KRAAK Amber,Team Jumbo-Visma,27.0,289.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,39.0,HAMMES Kathrin,EF Education-TIBCO-SVB,33.0,289.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,40.0,BRAND Lucinda,Trek - Segafredo,32.0,289.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,41.0,BIRIUKOVA Yuliia,Arkéa Pro Cycling Team,24.0,289.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,42.0,DRONOVA-BALABOLINA Tamara,Roland Cogeas Edelweiss Squad,28.0,369.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,43.0,HOLDEN Elizabeth,Le Col - Wahoo,24.0,369.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,44.0,LOWDEN Joscelin,Uno-X Pro Cycling Team,34.0,369.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,45.0,LUDWIG Hannah,Uno-X Pro Cycling Team,22.0,369.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,46.0,SCHOENS Quinty,Parkhotel Valkenburg,23.0,369.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,47.0,NEYLAN Rachel,Cofidis Women Team,40.0,369.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,48.0,AMIALIUSIK Alena,Canyon//SRAM Racing,33.0,369.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,49.0,WILLIAMS Georgia,Team BikeExchange - Jayco,28.0,369.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,50.0,HARVEY Mikayla,Canyon//SRAM Racing,23.0,369.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,51.0,AALERUD Katrine,Movistar Team,27.0,500.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,52.0,MACKAIJ Floortje,Team DSM,26.0,500.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,53.0,OTTESTAD Mie Bjørndal,Uno-X Pro Cycling Team,24.0,519.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,54.0,KERBAOL Cedrine,Cofidis Women Team,20.0,519.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,55.0,TON Quinty,Liv Racing Xstra,23.0,694.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,56.0,CLAES Lotte,Bingoal Casino - Chevalmeire - Van Eyck Sport,28.0,694.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,57.0,BERTIZZOLO Sofia,UAE Team ADQ,24.0,694.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,58.0,CHAPMAN Brodie,FDJ Nouvelle-Aquitaine Futuroscope,31.0,694.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,59.0,BREDEWOLD Mischa,Parkhotel Valkenburg,21.0,694.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,60.0,BUJAK Eugenia,UAE Team ADQ,32.0,777.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,61.0,JACKSON Alison,Liv Racing Xstra,33.0,777.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,62.0,STEPHENS Lauren,EF Education-TIBCO-SVB,35.0,777.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,63.0,VALLIERES Magdeleine,EF Education-TIBCO-SVB,20.0,777.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,64.0,BARALE Francesca,Team DSM,18.0,777.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,65.0,SOET Aafke,Team Jumbo-Visma,24.0,777.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,66.0,GEURTS Mijntje,Lotto Soudal Ladies,18.0,777.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,67.0,DOCX Mieke,Lotto Soudal Ladies,25.0,777.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,68.0,BUYSMAN Nina,Human Powered Health,24.0,777.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,69.0,GERRITSE Femke,Parkhotel Valkenburg,20.0,777.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,70.0,CARBONARI Anastasia,Valcar - Travel & Service,22.0,777.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,71.0,TOWERS Alice,Le Col - Wahoo,19.0,777.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,72.0,BERTON Nina,Andy Schleck - CP NVST - Immo Losch,20.0,777.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,73.0,JASKULSKA Marta,Liv Racing Xstra,22.0,777.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,74.0,WIEL Jade,FDJ Nouvelle-Aquitaine Futuroscope,22.0,777.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,75.0,STANNARD Elizabeth,Valcar - Travel & Service,24.0,777.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,76.0,YONAMINE Eri,Human Powered Health,30.0,777.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,77.0,KOREVAAR Jeanne,Liv Racing Xstra,25.0,777.0
+liege-bastogne-liege-femmes,,F-WWT,p2,2022.0,4.0,24.0,one-day-race,142.1,136.0,36.666 km/h,2257.0,13.4 km solo,78.0,BARNES Hannah,Uno-X Pro Cycling Team,28.0,777.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,1.0,DYGERT Chloe,United States,22.0,0.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,2.0,VAN DER BREGGEN Anna,Netherlands,29.0,92.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,3.0,VAN VLEUTEN Annemiek,Netherlands,36.0,112.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,4.0,NEBEN Amber,United States,44.0,158.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,5.0,KLEIN Lisa,Germany,23.0,160.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,6.0,REUSSER Marlen,Switzerland,28.0,182.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,7.0,THOMAS Leah,United States,30.0,192.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,8.0,BRAND Lucinda,Netherlands,30.0,195.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,9.0,AMIALIUSIK Alena,Belarus,30.0,197.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,10.0,BRENNAUER Lisa,Germany,31.0,199.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,11.0,SPRATT Amanda,Australia,32.0,237.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,12.0,CANUEL Karol-Ann,Canada,31.0,263.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,13.0,SHAPIRA Omer,Israel,25.0,269.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,14.0,NORDÉN Lisa,Sweden,34.0,271.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,15.0,LABOUS Juliette,France,20.0,272.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,16.0,BARNES Alice,Great Britain,24.0,272.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,17.0,LONGO BORGHINI Elisa,Italy,27.0,275.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,18.0,MATHIESEN Pernille,Denmark,21.0,276.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,19.0,CHURSINA Anastasiia,Russia,24.0,277.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,20.0,KIESENHOFER Anna,Austria,28.0,279.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,21.0,HEINE Vita,Norway,34.0,297.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,22.0,CHABBEY Elise,Switzerland,26.0,309.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,23.0,NORMAN HANSEN Louise,Denmark,24.0,315.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,24.0,MURPHY Kelly,Ireland,29.0,332.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,25.0,SHARAKOVA Tatsiana,Belarus,35.0,333.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,26.0,SIMMONDS Hayley,Great Britain,31.0,335.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,27.0,ZABELINSKAYA Olga,Uzbekistan,39.0,342.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,28.0,SHEKEL Olga,Ukraine,25.0,352.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,29.0,YONAMINE Eri,Japan,28.0,354.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,30.0,CORDON-RAGOT Audrey,France,30.0,356.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,31.0,AALERUD Katrine,Norway,24.0,360.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,32.0,MOOLMAN Ashleigh,South Africa,33.0,375.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,33.0,VAN DE VELDE Julie,Belgium,26.0,382.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,34.0,TURVEY Anna,Ireland,39.0,382.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,35.0,BUSSI Vittoria,Italy,32.0,388.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,36.0,PLICHTA Anna,Poland,27.0,393.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,37.0,GAFINOVITZ Rotem,Israel,27.0,412.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,38.0,CAMPBELL Teniel,Trinidad & Tobago,22.0,437.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,39.0,RODRÍGUEZ Gloria,Spain,27.0,438.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,40.0,KEEP Tiffany,South Africa,18.0,438.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,41.0,OYARBIDE Lourdes,Spain,25.0,472.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,42.0,ELLSAY Gillian,Canada,22.0,479.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,43.0,RAMIREZ Andrea,Mexico,19.0,513.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,44.0,NOVOLODSKAIA Maria,Russia,20.0,518.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,45.0,KIDANE Desiet,Eritrea,18.0,518.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,46.0,KONONENKO Valeriya,Ukraine,29.0,535.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,47.0,ESPÍNOLA Agua Marina,Paraguay,23.0,549.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,48.0,YAPURA Fernanda,Argentina,21.0,551.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,49.0,BJORNSDÓTTIR Agusta Edda,Iceland,42.0,579.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,50.0,CHANG Ting Ting,Taiwan,21.0,611.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,51.0,POLEGATCH Ana Paula,Brazil,30.0,629.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,52.0,ALYASEEN Latefa,Kuwait,25.0,1177.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2019.0,9.0,24.0,standard,30.3,,43.08 km/h,395.0,time trial,53.0,ALOMAIRI Noura,Kuwait,30.0,1229.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,1.0,VAN DER BREGGEN Anna,Netherlands,30.0,0.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,2.0,REUSSER Marlen,Switzerland,29.0,15.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,3.0,VAN DIJK Ellen,Netherlands,33.0,31.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,4.0,BRENNAUER Lisa,Germany,32.0,45.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,5.0,BROWN Grace,Australia,28.0,61.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,6.0,NEBEN Amber,United States,45.0,80.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,7.0,NORSGAARD Emma,Denmark,21.0,82.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,8.0,KRÖGER Mieke,Germany,27.0,91.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,9.0,STEPHENS Lauren,United States,33.0,103.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,10.0,BUSSI Vittoria,Italy,33.0,106.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,11.0,CORDON-RAGOT Audrey,France,31.0,113.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,12.0,WILLIAMS Georgia,New Zealand,27.0,136.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,13.0,BUJAK Eugenia,Slovenia,31.0,140.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,14.0,PLICHTA Anna,Poland,28.0,141.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,15.0,BANKS Elizabeth,Great Britain,29.0,143.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,16.0,AMIALIUSIK Alena,Belarus,31.0,148.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,17.0,LABOUS Juliette,France,21.0,150.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,18.0,KIESENHOFER Anna,Austria,29.0,150.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,19.0,BARNES Alice,Great Britain,25.0,153.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,20.0,HARVEY Mikayla,New Zealand,22.0,153.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,21.0,KIRCHMANN Leah,Canada,30.0,154.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,22.0,CANUEL Karol-Ann,Canada,32.0,166.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,23.0,SIERRA Arlenis,Cuba,27.0,166.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,24.0,NORDÉN Lisa,Sweden,35.0,172.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,25.0,GUAZZINI Vittoria,Italy,19.0,176.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,26.0,KONONENKO Valeriya,Ukraine,30.0,195.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,27.0,GAREEVA Aigul,Russia,19.0,218.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,28.0,FABER Claire,Luxembourg,22.0,225.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,29.0,ROŽLAPA Dana,Latvia,40.0,228.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,30.0,GAFINOVITZ Rotem,Israel,28.0,231.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,31.0,YONAMINE Eri,Japan,29.0,248.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,32.0,MATHIESEN Pernille,Denmark,22.0,262.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,33.0,VAN DE VEL Sara,Belgium,26.0,263.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,34.0,DUYCK Ann-Sophie,Belgium,33.0,286.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,35.0,SHEKEL Olga,Ukraine,26.0,293.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,36.0,CAMPBELL Teniel,Trinidad & Tobago,23.0,332.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,37.0,OYARBIDE Lourdes,Spain,26.0,344.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,38.0,SOTO Catalina Anais,Chile,19.0,354.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,39.0,MARTÍN Sara,Spain,21.0,391.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,40.0,YAPURA Fernanda,Argentina,22.0,394.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,41.0,KORVASOVÁ Tereza,Czech Republic,24.0,443.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,42.0,BJORNSDÓTTIR Agusta Edda,Iceland,43.0,444.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,43.0,MACHAČOVÁ Jarmila,Czech Republic,34.0,445.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,44.0,JONKER Kerry,South Africa,24.0,469.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,45.0,GEDRAITYTĖ Akvilė,Lithuania,19.0,538.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,46.0,PÁLSDÓTTIR Margrét,Iceland,42.0,579.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,47.0,JOSEPH Amber,Barbados,20.0,615.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,48.0,GEBRU Eyeru Tesfoam,Ethiopia,23.0,659.0
+world-championship-itt-we,,F-Worlds.TT	,p1,2020.0,9.0,24.0,standard,31.7,8.0,47.16 km/h,167.0,time trial,49.0,ES-SAD Siham,Morocco,20.0,847.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,1.0,VAN DIJK Ellen,Netherlands,34,0.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,2.0,REUSSER Marlen,Switzerland,30,10.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,3.0,VAN VLEUTEN Annemiek,Netherlands,38,24.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,4.0,NEBEN Amber,United States,46,84.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,5.0,BRENNAUER Lisa,Germany,33,89.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,6.0,LABOUS Juliette,France,22,107.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,7.0,KLEIN Lisa,Germany,25,112.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,8.0,LOWDEN Joscelin,Great Britain,33,119.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,9.0,MARKUS Riejanne,Netherlands,27,119.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,10.0,AMIALIUSIK Alena,Belarus,32,139.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,11.0,KIRCHMANN Leah,Canada,31,154.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,12.0,NORSGAARD Emma,Denmark,22,163.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,13.0,CANUEL Karol-Ann,Canada,33,168.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,14.0,THOMAS Leah,United States,32,170.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,15.0,KONONENKO Valeriya,Ukraine,31,170.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,16.0,CORDON-RAGOT Audrey,France,31,176.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,17.0,KIESENHOFER Anna,Austria,30,176.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,18.0,EKLUND Nathalie,Sweden,30,177.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,19.0,BUJAK Eugenia,Slovenia,32,179.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,20.0,KARASIEWICZ Karolina,Poland,29,184.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,21.0,JASKULSKA Marta,Poland,21,186.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,22.0,VAN DE VELDE Julie,Belgium,28,187.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,23.0,SHAPIRA Omer,Israel,27,195.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,24.0,GUAZZINI Vittoria,Italy,20,197.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,25.0,GEORGI Pfeiffer,Great Britain,20,198.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,26.0,SOLOVEI Ganna,Ukraine,29,210.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,27.0,AALERUD Katrine,Norway,26,211.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,28.0,ROŽLAPA Dana,Latvia,41,218.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,29.0,PIRRONE Elena,Italy,22,248.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,30.0,VAN DE VEL Sara,Belgium,27,248.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,31.0,KOERNER Rebecca,Denmark,20,248.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,32.0,GAFINOVITZ Rotem,Israel,29,259.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,33.0,DRONOVA-BALABOLINA Tamara,Russia,28,262.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,34.0,HERNÁNDEZ Lina Marcela,Colombia,22,262.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,35.0,ISASI Ziortza,Spain,26,271.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,36.0,YAPURA Fernanda,Argentina,23,273.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,37.0,BJORNSDÓTTIR Agusta Edda,Iceland,44,294.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,38.0,JANSE VAN RENSBURG Frances,South Africa,20,316.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,39.0,KUSKOVA Yanina,Uzbekistan,19,319.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,40.0,PREEN Hayley,South Africa,23,336.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,41.0,CAMPOS Daniela,Portugal,19,347.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,42.0,COLMENARES Yeny Lorena,Colombia,30,375.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,43.0,SOMRAT Phetdarin,Thailand,26,404.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,44.0,GUNNARSDÓTTIR Bríet Kristý,Iceland,33,427.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,45.0,ROLAND Luciana,Argentina,26,459.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,46.0,TESFALEM Adyam,Eritrea,24,523.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,47.0,INGABIRE Diane,Rwanda,20,552.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,48.0,MALIK Kanza,Pakistan,34,889.0
+world-championship-itt-we,NA,F-Worlds.TT	,p1,2021.0,9.0,20.0,standard,30.3,0,50.383 km/h,27.0,time trial,49.0,JAN Asma,Pakistan,45,944.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,1.0,VAN VLEUTEN Annemiek,Netherlands,38,0.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,2.0,REUSSER Marlen,Switzerland,29,56.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,3.0,VAN DER BREGGEN Anna,Netherlands,31,62.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,4.0,BROWN Grace,Australia,29,69.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,5.0,NEBEN Amber,United States,46,73.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,6.0,BRENNAUER Lisa,Germany,33,117.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,7.0,DYGERT Chloe,United States,24,136.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,8.0,MOOLMAN Ashleigh,South Africa,35,144.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,9.0,LABOUS Juliette,France,22,149.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,10.0,LONGO BORGHINI Elisa,Italy,29,167.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,11.0,GIGANTE Sarah,Australia,20,168.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,12.0,KIRCHMANN Leah,Canada,31,168.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,13.0,KLEIN Lisa,Germany,25,168.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,14.0,CANUEL Karol-Ann,Canada,33,174.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,15.0,SHAPIRA Omer,Israel,26,182.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,16.0,AMIALIUSIK Alena,Belarus,32,188.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,17.0,NORSGAARD Emma,Denmark,22,217.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,18.0,SHACKLEY Anna,Great Britain,20,240.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,19.0,VAN DE VELDE Julie,Belgium,28,250.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,20.0,AALERUD Katrine,Norway,26,260.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,21.0,MAJERUS Christine,Luxembourg,34,261.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,22.0,YONAMINE Eri,Japan,30,261.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,23.0,GARCÍA Mavi,Spain,37,266.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,24.0,PLICHTA Anna,Poland,29,283.0
+olympic-games-we-itt,NA,F-OS.TT,p2,2021.0,7.0,28.0,standard,22.1,NA,43.883 km/h,380.0,time trial,25.0,ALIZADA Masomah,Refugee Olympic Team,25,831.0

@@ -48,6 +48,16 @@
         }
     },
     "one-day-race": {
+        "2019": {
+            "world-championship-itt-we": 0
+        },
+        "2020": {
+            "world-championship-itt-we": 0
+        },
+        "2021": {
+            "world-championship-itt-we": 0,
+            "olympic-games-we-itt": 0
+        },
         "2022": {
             "strade-bianche-donne": 1,
             "womens-worldtour-ronde-van-drenthe": 2,
@@ -88,14 +98,16 @@
             "women-s-tour-of-scotland": 6,
             "colorado-classic-we": 5,
             "lotto-belgium-tour": 6,
-            "tour-cycliste-feminin-international-ardeche": 4
+            "tour-cycliste-feminin-international-ardeche": 4,
+            "world-championship-itt-we": 0
         },
         "2020": {
             "giro-d-italia-femminile": 1,
             "ceratzit-challenge-by-la-vuelta": 3,
             "santos-women-s-tour": 5,
             "womens-herald-sun-tour": 6,
-            "tour-cycliste-feminin-international-ardeche": 4
+            "tour-cycliste-feminin-international-ardeche": 4,
+            "world-championship-itt-we": 0
         },
         "2021": {
             "vuelta-a-burgos-feminas": 3,
@@ -111,7 +123,9 @@
             "tour-de-suisse-women": 6,
             "lotto-belgium-tour": 6,
             "bene-ladies-tour": 6,
-            "tour-cycliste-feminin-international-ardeche": 4
+            "tour-cycliste-feminin-international-ardeche": 4,
+            "world-championship-itt-we": 0,
+            "olympic-games-we-itt": 1
         },
         "2022": {
             "setmana-ciclista-valenciana": 3,

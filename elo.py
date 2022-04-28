@@ -20,6 +20,7 @@ NEW_SEASON_REGRESS_WEIGHT = 0.4  # weight the degree to which rider scores conve
 RAW_RESULT_NUM_PRINTED = 15  # number of finishers printed in raw data per race if VERBOSE = True
 MIN_YEAR = 2007
 MAX_YEAR = 2023
+SAVE_RESULTS = False
 
 # ===== Get Script Args ===== #
 EXPECTED_ARGS = 5
@@ -112,10 +113,12 @@ for year in range(beg_year, end_year):
                 # print the elo system after this race is added
                 elo.print_system(year, min_rating = 1500)
 
-            elo.save_system(stage_date)
+            if SAVE_RESULTS:
+                elo.save_system(stage_date)
     
     # regress scores back to the mean of 1500 at the start of each season
     if year < end_year - 1:
         elo.new_season_regression(year, regression_to_mean_weight = NEW_SEASON_REGRESS_WEIGHT)
 
-elo.save_system_data(f'{race_type}_{gender}')
+if SAVE_RESULTS:
+    elo.save_system_data(f'{race_type}_{gender}')
