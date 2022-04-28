@@ -1,0 +1,121 @@
+{
+    "gc": {
+        "2019": {
+            "tour-of-chongming-island-world-cup": 6,
+            "amgen-tour-of-california-we": 3,
+            "iurreta-emakumeen-bira": 3,
+            "the-women-s-tour": 2,
+            "giro-d-italia-femminile": 1,
+            "ladies-tour-of-norway": 5,
+            "simac-ladies-tour": 6,
+            "ceratzit-challenge-by-la-vuelta": 4,
+            "santos-women-s-tour": 5,
+            "easytoys-bloeizone-fryslan-tour": 6,
+            "the-women-s-tour-de-yorkshire-race": 6,
+            "grand-prix-elsy-jacobs": 5,
+            "vuelta-a-burgos-feminas": 4,
+            "women-s-tour-of-scotland": 6,
+            "colorado-classic-we": 5,
+            "lotto-belgium-tour": 6,
+            "tour-cycliste-feminin-international-ardeche": 4
+        },
+        "2020": {
+            "giro-d-italia-femminile": 1,
+            "ceratzit-challenge-by-la-vuelta": 3,
+            "santos-women-s-tour": 5,
+            "womens-herald-sun-tour": 6,
+            "tour-cycliste-feminin-international-ardeche": 4
+        },
+        "2021": {
+            "vuelta-a-burgos-feminas": 3,
+            "ladies-tour-of-norway": 3,
+            "simac-ladies-tour": 3,
+            "ceratzit-challenge-by-la-vuelta": 3,
+            "the-women-s-tour": 3,
+            "grand-prix-elsy-jacobs": 6,
+            "int-thuringen-rundfahrt-der-frauen": 6,
+            "giro-d-italia-femminile": 1,
+            "easytoys-bloeizone-fryslan-tour": 6,
+            "setmana-ciclista-valenciana": 4,
+            "tour-de-suisse-women": 6,
+            "lotto-belgium-tour": 6,
+            "bene-ladies-tour": 6,
+            "tour-cycliste-feminin-international-ardeche": 4
+        },
+        "2022": {
+            "setmana-ciclista-valenciana": 3,
+            "easytoys-bloeizone-fryslan-tour": 5
+        }
+    },
+    "one-day-race": {
+        "2022": {
+            "strade-bianche-donne": 1,
+            "womens-worldtour-ronde-van-drenthe": 2,
+            "trofeo-alfredo-binda": 1,
+            "exterioo-classic-brugge-de-panne-we": 2,
+            "gent-wevelgem-women-elite": 1,
+            "ronde-van-vlaanderen-we": 0,
+            "amstel-gold-race-we": 1,
+            "omloop-het-nieuwsblad-we": 3,
+            "dwars-door-vlaanderen-we": 3,
+            "brabantse-pijl-we": 3,
+            "danilith-nokere-koerse-voor-dames": 4,
+            "vuelta-a-la-comunitat-valenciana-feminas": 5,
+            "omloop-van-het-hageland-tielt-winge": 5,
+            "le-samyn-des-dames": 5,
+            "gp-oetingen": 5,
+            "scheldeprijs-vrouwen-elite": 5,
+            "paris-roubaix-we": 0,
+            "la-fleche-wallonne-feminine": 1,
+            "liege-bastogne-liege-femmes": 0
+        }
+    },
+    "itt": {
+        "2019": {
+            "tour-of-chongming-island-world-cup": 6,
+            "amgen-tour-of-california-we": 3,
+            "iurreta-emakumeen-bira": 3,
+            "the-women-s-tour": 2,
+            "giro-d-italia-femminile": 1,
+            "ladies-tour-of-norway": 5,
+            "simac-ladies-tour": 6,
+            "ceratzit-challenge-by-la-vuelta": 4,
+            "santos-women-s-tour": 5,
+            "easytoys-bloeizone-fryslan-tour": 6,
+            "the-women-s-tour-de-yorkshire-race": 6,
+            "grand-prix-elsy-jacobs": 5,
+            "vuelta-a-burgos-feminas": 4,
+            "women-s-tour-of-scotland": 6,
+            "colorado-classic-we": 5,
+            "lotto-belgium-tour": 6,
+            "tour-cycliste-feminin-international-ardeche": 4
+        },
+        "2020": {
+            "giro-d-italia-femminile": 1,
+            "ceratzit-challenge-by-la-vuelta": 3,
+            "santos-women-s-tour": 5,
+            "womens-herald-sun-tour": 6,
+            "tour-cycliste-feminin-international-ardeche": 4
+        },
+        "2021": {
+            "vuelta-a-burgos-feminas": 3,
+            "ladies-tour-of-norway": 3,
+            "simac-ladies-tour": 3,
+            "ceratzit-challenge-by-la-vuelta": 3,
+            "the-women-s-tour": 3,
+            "grand-prix-elsy-jacobs": 6,
+            "int-thuringen-rundfahrt-der-frauen": 6,
+            "giro-d-italia-femminile": 1,
+            "easytoys-bloeizone-fryslan-tour": 6,
+            "setmana-ciclista-valenciana": 4,
+            "tour-de-suisse-women": 6,
+            "lotto-belgium-tour": 6,
+            "bene-ladies-tour": 6,
+            "tour-cycliste-feminin-international-ardeche": 4
+        },
+        "2022": {
+            "setmana-ciclista-valenciana": 3,
+            "easytoys-bloeizone-fryslan-tour": 5
+        }
+    }
+}
