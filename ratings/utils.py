@@ -8,11 +8,14 @@ import numpy as np
 import pandas as pd
 
 # local
+from ratings import RaceSelection
 from ratings.Velo import Velo
 
 PLACES_COL = 'place'
 RIDER_COL = 'rider'
 TIME_COL = 'time'
+LENGTH_COL = 'length'
+VERT_COL = 'vertical_meters'
 WORLD_OLYMPICS_ITT_NAMES = [
     'world-championship-itt', 'olympic-games-itt',
     'world-championship-itt-we', 'olympic-games-we-itt'
@@ -22,7 +25,8 @@ NEW_SEASON_REGRESS_WEIGHT = 0.4  # weight the degree to which rider scores conve
 
 def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender, race_type,
         timegap_multiplier = None, new_season_regress_weight = NEW_SEASON_REGRESS_WEIGHT, 
-        decay_alpha = 1.5, decay_beta = 1.8, save_results = False, verbose = True):
+        decay_alpha = 1.5, decay_beta = 1.8, given_tt_length_adjustor = None,
+        given_tt_vert_adjustor = None, save_results = False, verbose = True):
     """
     Given necessary params, init an Elo system and run through all the applicable data,
     tracking changes to rider ratings over time. Returns an Elo object.
@@ -57,6 +61,12 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
 
                 # get race weight
                 race_weight = race_weights[gender][race_type][str(race_classes[race_type][str(year)][race])]
+
+                # adjust race weight if race_type is TT and types given
+                if race_type == 'itt':
+                    race_weight = RaceSelection.weight_itt_by_type(
+                        stage_data, (given_tt_length_adjustor, given_tt_vert_adjustor), race_weight
+                    )
                 
                 # get the race's date as date object
                 stage_date = get_race_date(stage_data)
@@ -89,28 +99,6 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
     if save_results:
         elo.save_system_data(f'{race_type}_{gender}')
 
-
-def k_decay(K: float, p1: int, p2: int, alpha: float = 1.5, beta: float = 1.8):
-    """
-    Most recent iteration of the decay function for head-to-head result weights
-    in cycling results. K is the weight given to the race in question, and this
-    function updates K for individual head-to-heads based on their overall
-    "importance". Head-to-heads are more "important" if they (1) involve the highest
-    placed rider(s) in the race or (2) involve riders who placed close to one another.
-    K is first scaled based off the absolute place of the higher placed rider (p1), and then
-    based on the relative placing (difference between p1 and p2).Adjust alpha and beta 
-    to signify different importances of absolute placing (alpha) and relative 
-    placing (beta). For both alpha and beta, higher values signify an increase in 
-    the rate of decay as absolute/relative placing get larger.
-    """
-
-    # adjust K based on absolute placing
-    out = K * (p1 / (p1 ** alpha))
-
-    # adjust K based on relative placing
-    out = out * ((p2 - p1) / ((p2 - p1) ** beta))
-
-    return out
 
 def get_elo_probabilities(rider1_rating, rider2_rating, q_base, q_exponent_denom):
     """

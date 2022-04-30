@@ -60,4 +60,4 @@ with open(WEIGHTS_PATH) as f:
     WEIGHTS = json.load(f)
 f.close()
 
-utils.elo_driver(DATA, RACE_CLASSES, WEIGHTS, beg_year, end_year, gender, race_type)
+utils.elo_driver(DATA, RACE_CLASSES, WEIGHTS, beg_year, end_year, gender, race_type, given_tt_vert_adjustor = 'hilly')
