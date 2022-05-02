@@ -90,6 +90,47 @@ class Rider:
     def __repr__(self):
         return str(self)
 
+class GlickoRider(Rider):
+
+    def __init__(self, name, initial_rating, initial_rd,
+        initial_volatility, team = None, age = None):
+
+        super().__init__(name, initial_rating = initial_rating, team = team, age = age)
+
+        self.rd = initial_rd
+        self.volatility = initial_volatility
+        self.num_races = 0
+
+        self.rating_history = [(self.rating, self.rd, self.volatility, NEW_SEASON_RATING_KEYWORD)]
+    
+    def new_season(self, weight):
+
+        # get the new rating
+        new_rating = (DEFAULT_INITIAL_RATING * weight) + (self.rating * (1 - weight))
+        
+        # add the new rating to the rider's rating history as a new Race
+        self.race_history.append(Race('New Season', None, None, None))
+        
+        # update the rating
+        self.rating = new_rating
+        self.rating_history.append((self.rating, self.rd, self.volatility, NEW_SEASON_RATING_KEYWORD))
+    
+    def update_rating(self, race_name, race_weight, datestamp, 
+            new_rating = None, new_rd = None, new_volatility = None):
+
+        if new_rating is not None:
+            self.rating = new_rating
+            self.num_races += 1
+        if new_rd is not None:
+            self.rd = new_rd
+        if new_volatility is not None:
+            self.volatility = new_volatility
+
+        self.rating_history.append((self.rating, self.rd, self.volatility, datestamp))
+
+        # update the most recent year of competition for the rider
+        self.most_recent_active_year = datestamp.year
+
 class Race:
     def __init__(self, name, weight, datestamp, place):
 

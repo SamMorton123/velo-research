@@ -10,6 +10,7 @@ import pandas as pd
 # local
 from ratings import RaceSelection
 from ratings.Velo import Velo
+from ratings.VGlicko import VGlicko
 
 PLACES_COL = 'place'
 RIDER_COL = 'rider'
@@ -98,6 +99,65 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
 
     if save_results:
         elo.save_system_data(f'{race_type}_{gender}')
+
+def glicko_driver(data_main, race_classes, race_weights, beg_year, end_year, gender, race_type,
+        timegap_multiplier = None, new_season_regress_weight = NEW_SEASON_REGRESS_WEIGHT, 
+        decay_alpha = 1.5, decay_beta = 1.8, given_tt_length_adjustor = None,
+        given_tt_vert_adjustor = None, save_results = False, verbose = True):
+
+    # init Glicko system
+    glicko = VGlicko()
+
+    # loop through each year in the gc data
+    for year in range(beg_year, end_year):
+        
+        # prepare and isolate data for the given year
+        year_data = prepare_year_data(data_main, year, race_type = race_type)
+        if len(year_data) == 0:
+            continue
+
+        if verbose:
+            print(f'\n====={year}=====\n')
+        
+        # loop through each race in the current year's data
+        for race in year_data['name'].unique():
+
+            # if race is not contained within the weight data, skip
+            if race not in race_classes[race_type][str(year)]:
+                continue
+            
+            stages_data = prepare_race_data(year_data, race)
+            for stage_data in stages_data:
+
+                # get the stage number
+                stage_name = stage_data['stage'].iloc[0]
+
+                # get race weight
+                race_weight = race_weights[gender][race_type][str(race_classes[race_type][str(year)][race])]
+
+                # adjust race weight if race_type is TT and types given
+                if race_type == 'itt':
+                    race_weight = RaceSelection.weight_itt_by_type(
+                        stage_data, (given_tt_length_adjustor, given_tt_vert_adjustor), race_weight
+                    )
+                
+                # get the race's date as date object
+                stage_date = get_race_date(stage_data)
+                
+                # simulate the race and add it to the rankings
+                glicko.simulate_race(race, stage_data, race_weight, timegap_multiplier)
+                
+                if verbose:
+
+                    # print raw results for the current race
+                    print(f'\n==={race} - {year} - {stage_name} - (weight = {race_weight})===\n')
+                    print(stage_data[['place', 'rider', 'time', 'team']].iloc[0: RAW_RESULT_NUM_PRINTED, :])
+
+                    glicko.print_system(year)
+        
+        # regress scores back to the mean of 1500 at the start of each season
+        if year < end_year - 1:
+            glicko.new_season_regression(year, regression_to_mean_weight = new_season_regress_weight)
 
 
 def get_elo_probabilities(rider1_rating, rider2_rating, q_base, q_exponent_denom):
