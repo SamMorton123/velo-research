@@ -13,13 +13,14 @@ from ratings.entities import GlickoRider, Race
 
 SCALE_CONSTANT = 173.7178
 PLACE_DIFF_CONSTANT = 50
+MATCHUP_WEIGHT_SCALE = 0.2
 
 
 class VGlicko(Velo.Velo):
 
     def __init__(self, initial_rating: int = 1500, initial_rd: int = 350, 
             intial_volatility: float = 0.06, tau: float = 0.2,
-            decay_alpha: float = 1.3, decay_beta: float = 2.5,
+            decay_alpha: float = 1.6, decay_beta: float = 1.5,
             season_turnover_default: float = Velo.SEASON_TURNOVER_DEFAULT, 
             elo_q_base: int = Velo.ELO_Q_BASE, elo_q_exponent_denom: int = Velo.ELO_Q_EXPONENT_DENOM):
 
@@ -109,7 +110,7 @@ class VGlicko(Velo.Velo):
                     j + 1,
                     alpha = self.decay_alpha,
                     beta = self.decay_beta
-                )
+                ) * MATCHUP_WEIGHT_SCALE
 
                 matchup_weights[(rider1, rider2)] = matchup_weight
                 matchup_weights[(rider2, rider1)] = matchup_weight
