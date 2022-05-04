@@ -101,7 +101,7 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
         elo.save_system_data(f'{race_type}_{gender}')
 
 def glicko_driver(data_main, race_classes, race_weights, beg_year, end_year, gender, race_type,
-        timegap_multiplier = None, new_season_regress_weight = NEW_SEASON_REGRESS_WEIGHT, 
+        timegap_multiplier = None,
         decay_alpha = 1.5, decay_beta = 1.8, given_tt_length_adjustor = None,
         given_tt_vert_adjustor = None, save_results = False, verbose = True):
 
@@ -141,9 +141,6 @@ def glicko_driver(data_main, race_classes, race_weights, beg_year, end_year, gen
                         stage_data, (given_tt_length_adjustor, given_tt_vert_adjustor), race_weight
                     )
                 
-                # get the race's date as date object
-                stage_date = get_race_date(stage_data)
-                
                 # simulate the race and add it to the rankings
                 glicko.simulate_race(race, stage_data, race_weight, timegap_multiplier)
                 
@@ -157,7 +154,7 @@ def glicko_driver(data_main, race_classes, race_weights, beg_year, end_year, gen
         
         # regress scores back to the mean of 1500 at the start of each season
         if year < end_year - 1:
-            glicko.new_season_regression(year, regression_to_mean_weight = new_season_regress_weight)
+            glicko.new_season_regression(year)
 
 
 def get_elo_probabilities(rider1_rating, rider2_rating, q_base, q_exponent_denom):

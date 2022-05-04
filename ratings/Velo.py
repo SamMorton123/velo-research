@@ -43,7 +43,7 @@ class Velo:
         # collect args as instance variables
         self.decay_alpha = decay_alpha
         self.decay_beta = decay_beta
-        self.season_turnover_default = season_turnover_default
+        self.season_turnover = season_turnover_default
         self.elo_q_base = elo_q_base
         self.elo_q_exponent_denom = elo_q_exponent_denom
          
@@ -192,7 +192,7 @@ class Velo:
         for name in self.riders:
             self.riders[name].resolve_delta(race_name, race_weight, datestamp)
 
-    def new_season_regression(self, year, regression_to_mean_weight = 0.5):
+    def new_season_regression(self, year):
         """
         Regress all rider ratings back to the default initial rating at the onset
         of a new season.
@@ -200,7 +200,7 @@ class Velo:
 
         self.races.append(Race('New Season', None, None, None))
         for name in self.riders:
-            self.riders[name].new_season(regression_to_mean_weight)
+            self.riders[name].new_season(year, self.season_turnover)
         
         self.save_system(date(year = year, month = 1, day = 1))
     

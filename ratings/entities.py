@@ -64,7 +64,7 @@ class Rider:
         # update the most recent year of competition for the rider
         self.most_recent_active_year = datestamp.year
     
-    def new_season(self, weight):
+    def new_season(self, year, weight):
         """
         There can be unpredictible changes to rider abilities in the off-season, and this
         method is intended to model this at the rider level. Basically, at the end of a season,
@@ -79,7 +79,7 @@ class Rider:
         
         # update the rating
         self.rating = new_rating
-        self.rating_history.append((self.rating, NEW_SEASON_RATING_KEYWORD))
+        self.rating_history.append((self.rating, date(year = year, month = 1, day = 1)))
     
     def __eq__(self, other_rider):
         return self.name == other_rider.name
@@ -103,7 +103,7 @@ class GlickoRider(Rider):
 
         self.rating_history = [(self.rating, self.rd, self.volatility, NEW_SEASON_RATING_KEYWORD)]
     
-    def new_season(self, weight):
+    def new_season(self, year, weight):
 
         # get the new rating
         new_rating = (DEFAULT_INITIAL_RATING * weight) + (self.rating * (1 - weight))
@@ -113,7 +113,7 @@ class GlickoRider(Rider):
         
         # update the rating
         self.rating = new_rating
-        self.rating_history.append((self.rating, self.rd, self.volatility, NEW_SEASON_RATING_KEYWORD))
+        self.rating_history.append((self.rating, self.rd, self.volatility, date(year = year, month = 1, day = 1)))
     
     def update_rating(self, race_name, race_weight, datestamp, 
             new_rating = None, new_rd = None, new_volatility = None):

@@ -13,15 +13,16 @@ from ratings.entities import GlickoRider, Race
 
 SCALE_CONSTANT = 173.7178
 PLACE_DIFF_CONSTANT = 50
-MATCHUP_WEIGHT_SCALE = 0.2
+MATCHUP_WEIGHT_SCALE = 0.4
+RD_THRESH = 40
 
 
 class VGlicko(Velo.Velo):
 
     def __init__(self, initial_rating: int = 1500, initial_rd: int = 350, 
-            intial_volatility: float = 0.06, tau: float = 0.2,
+            intial_volatility: float = 0.06, tau: float = 0.05,
             decay_alpha: float = 1.6, decay_beta: float = 1.5,
-            season_turnover_default: float = Velo.SEASON_TURNOVER_DEFAULT, 
+            season_turnover_default: float = 0.2, 
             elo_q_base: int = Velo.ELO_Q_BASE, elo_q_exponent_denom: int = Velo.ELO_Q_EXPONENT_DENOM):
 
         super().__init__(
@@ -36,6 +37,10 @@ class VGlicko(Velo.Velo):
         self.initial_rd = initial_rd
         self.initial_volatility = intial_volatility
         self.tau = tau
+
+        # track rider rating deltas so that only changes from the most
+        # recent race are printed by print_system
+        self.rating_deltas = {}
     
     def add_new_rider(self, name, age):
         """
@@ -59,10 +64,30 @@ class VGlicko(Velo.Velo):
         
         return rider
     
+    def get_win_prob(self, rider1, rider2):
+        """
+        Return the probability that rider1 will defeat rider2.
+        """
+
+        # verify both riders are in the system
+        if rider1 not in self.riders:
+            raise ValueError(f'Given name {rider1} not found in Glicko system.')
+        if rider2 not in self.riders:
+            raise ValueError(f'Given name {rider2} not found in Glicko system.')
+
+        # get ratings for both riders and RD for name2
+        rider1_mu = (self.riders[rider1].rating - self.initial_rating) / SCALE_CONSTANT
+        rider2_mu = (self.riders[rider2].rating - self.initial_rating) / SCALE_CONSTANT
+        rider2_phi = self.riders[rider2].rd / SCALE_CONSTANT
+
+        return self.compute_E(rider1_mu, rider2_mu, rider2_phi)
+    
     def simulate_race(self, race_name, results, race_weight, timegap_multiplier):
         """
         Apply the affect of the given race to the Glicko system.
         """
+
+        self.rating_deltas = {}
 
         # get race date
         race_date = date(
@@ -136,25 +161,15 @@ class VGlicko(Velo.Velo):
             for rider in g2_ratings
         }
 
-        # get new RD for riders that didn't compete
-        new_rds_non_competitors = {
-            rider: self.compute_non_competitor_rd_update(rider)
-            for rider in self.riders
-            if rider not in g2_ratings
-        }
-
         # update rider ratings/RD/volatility for all riders
         for rider in new_ratings:
+            
+            self.rating_deltas[rider] = new_ratings[rider][0] - self.riders[rider].rating
             self.riders[rider].update_rating(
                 race_name, race_weight, race_date,
                 new_rating = new_ratings[rider][0],
                 new_rd = new_ratings[rider][1],
                 new_volatility = new_vols[rider]
-            )
-        for rider in new_rds_non_competitors:
-            self.riders[rider].update_rating(
-                race_name, race_weight, race_date,
-                new_rd = new_rds_non_competitors[rider]
             )
         
     def print_system(self, curr_year, printing_limit = 50):
@@ -178,14 +193,13 @@ class VGlicko(Velo.Velo):
             if rider.most_recent_active_year < curr_year - 1:
                 continue
                 
-            rating_change = round(rider.rating_history[-1][0] - rider.rating_history[-2][0], 2)
-            if rating_change == 0: rating_change = ''
-            else:
-                color = 'green' if rating_change > 0 else 'red'
-                rating_change = colored(rating_change, color)
+            rating_delta = round(self.rating_deltas[rider.name], 2) if rider.name in self.rating_deltas else ''
+            if rating_delta != '':
+                color = 'green' if rating_delta > 0 else 'red'
+                rating_delta = colored(rating_delta, color)
 
             print(
-                f'{pos + 1}.', f'{rider.name} - {round(rider.rating, 2)} {rating_change}',
+                f'{pos + 1}.', f'{rider.name} - {round(rider.rating, 2)} {rating_delta}',
                 f'[{round(rider.rd, 2)}, {round(rider.volatility, 2)}]',
                 f'({round(rider.rating - (2 * rider.rd), 2)} - {round(rider.rating + (2 * rider.rd), 2)}); ',
                 f'Num races: {rider.num_races}', 
