@@ -3,9 +3,12 @@ Support module for Elo system.
 """
 
 from datetime import date
+import json
 import math
 import numpy as np
 import pandas as pd
+from scipy.stats import spearmanr
+from tqdm import tqdm
 
 # local
 from ratings import RaceSelection
@@ -23,18 +26,22 @@ WORLD_OLYMPICS_ITT_NAMES = [
 ]
 RAW_RESULT_NUM_PRINTED = 15  # number of finishers printed in raw data per race if VERBOSE = True
 NEW_SEASON_REGRESS_WEIGHT = 0.4  # weight the degree to which rider scores converge to 1500 during off season
+EVAL_COLLECTION_LIM = 100  # amount of riders considered when evaluating predictive performance of rankings
 
 def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender, race_type,
-        timegap_multiplier = None, new_season_regress_weight = NEW_SEASON_REGRESS_WEIGHT, 
+        timegap_multiplier = None, new_season_regress_weight = NEW_SEASON_REGRESS_WEIGHT,
         decay_alpha = 1.5, decay_beta = 1.8, given_tt_length_adjustor = None,
-        given_tt_vert_adjustor = None, save_results = False, verbose = True):
+        given_tt_vert_adjustor = None, save_results = False, verbose = True,
+        eval_races = []):
     """
     Given necessary params, init an Elo system and run through all the applicable data,
     tracking changes to rider ratings over time. Returns an Elo object.
     """
 
     # init elo system variable
-    elo = Velo(decay_alpha = 1.5, decay_beta = 1.8)
+    elo = Velo(decay_alpha = decay_alpha, decay_beta = decay_beta, season_turnover_default = new_season_regress_weight)
+
+    eval_results = {}
 
     # loop through each year in the gc data
     for year in range(beg_year, end_year):
@@ -60,6 +67,8 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
                 # get the stage number
                 stage_name = stage_data['stage'].iloc[0]
 
+                stage_length = stage_data['length'].iloc[0]   
+
                 # get race weight
                 race_weight = race_weights[gender][race_type][str(race_classes[race_type][str(year)][race])]
 
@@ -71,6 +80,16 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
                 
                 # get the race's date as date object
                 stage_date = get_race_date(stage_data)
+
+                eval_results[f'{race}-{year}-{stage_name}'] = {
+                    'date': stage_date.isoformat(),
+                    'actual': list(stage_data['rider'].iloc[0: EVAL_COLLECTION_LIM]),
+                    'top_active': sorted([
+                        [rider, elo.riders[rider].rating] if rider in elo.riders else [rider, 1500]
+                        for rider in stage_data['rider']
+                    ], key = lambda t: t[1], reverse = True)[0: EVAL_COLLECTION_LIM],
+                    'length': stage_length
+                }
 
                 # save the elo system in a dictionary
                 elo.save_system(stage_date)
@@ -95,13 +114,60 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
         
         # regress scores back to the mean of 1500 at the start of each season
         if year < end_year - 1:
-            elo.new_season_regression(year, regression_to_mean_weight = new_season_regress_weight)
+            elo.new_season_regression(year)
 
     if save_results:
         elo.save_system_data(f'{race_type}_{gender}')
+        if len(eval_races) > 0:
+            with open(f'system-data/{gender}-{race_type}-{beg_year}-{end_year}-eval.json', 'w') as f:
+                json.dump(eval_results, f)
+            f.close()
+    
+    return eval_results
+
+def optimize_elo(data_main, race_classes, race_weights, beg_year, end_year, gender, race_type,
+        timegap_multiplier = None,
+        decay_alpha = 1.5, decay_beta = 1.8, given_tt_length_adjustor = None,
+        given_tt_vert_adjustor = None, eval_races = []):
+    
+    weights_to_check = []
+    for w in range(2, 12):
+        for f in [0.25, 0.5, 1.5, 2]:
+            new = {gender: {race_type: {}}}
+            for w2 in race_weights[gender][race_type]:
+                if w != w2:
+                    new[gender][race_type][str(w2)] = race_weights[gender][race_type][str(w2)]
+            new[gender][race_type][str(w)] = race_weights[gender][race_type][str(w)] * f
+
+            weights_to_check.append(new)
+
+    reses = []
+    for option in tqdm(weights_to_check):
+        
+        res = elo_driver(
+            data_main, race_classes, option, beg_year, end_year, gender, race_type,
+            decay_alpha = decay_alpha, decay_beta = decay_beta, given_tt_length_adjustor = given_tt_length_adjustor,
+            given_tt_vert_adjustor = given_tt_vert_adjustor, save_results = False, verbose = False,
+            eval_races = eval_races
+        )
+        reses.append(res_eval(res))
+    
+    for u, v in zip(weights_to_check, reses):
+        print(u)
+        print(v)
+        print()
+
+def res_eval(res):
+
+    spearmans = []
+    for key in res:
+        actual = res[key]['actual']
+        predicted = [t[0] for t in res[key]['top_active']]
+        spearmans.append(abs(spearmanr(actual, predicted)[0]))
+    return np.mean(spearmans)
 
 def glicko_driver(data_main, race_classes, race_weights, beg_year, end_year, gender, race_type,
-        timegap_multiplier = None,
+        timegap_multiplier = None, fname = None,
         decay_alpha = 1.5, decay_beta = 1.8, given_tt_length_adjustor = None,
         given_tt_vert_adjustor = None, save_results = False, verbose = True):
 
@@ -155,6 +221,9 @@ def glicko_driver(data_main, race_classes, race_weights, beg_year, end_year, gen
         # regress scores back to the mean of 1500 at the start of each season
         if year < end_year - 1:
             glicko.new_season_regression(year)
+    
+    if fname is not None:
+        glicko.save_ratings(fname)
 
 
 def get_elo_probabilities(rider1_rating, rider2_rating, q_base, q_exponent_denom):
@@ -188,11 +257,10 @@ def get_marg_victory_factor(rider1, rider1_time, rider2, rider2_time, time_gap_m
         return 1
 
     # expand time difference with multiplier
-    time_factor = (rider2_time.seconds - rider1_time.seconds) * time_gap_multiplier
+    time_factor = abs(rider2_time.seconds - rider1_time.seconds) * time_gap_multiplier
     
     # get difference in ratings
     rating_diff = rider1.rating - rider2.rating
-
     return math.log(time_factor + 2) * (2.2 / ((rating_diff * 0.001) + 2.2))
 
 def prepare_year_data(data, year, race_type = 'gc', sort = True):
@@ -213,9 +281,12 @@ def prepare_year_data(data, year, race_type = 'gc', sort = True):
 
         year_data = pd.concat([year_data, worlds_olympics_itts])
     
-    else:
+    elif race_type in ['gc', 'one-day-race']:
         race_type_lst = [race_type]
         year_data = year_data[year_data['type'].isin(race_type_lst)]
+    
+    elif race_type == 'sprints':
+        year_data = year_data[year_data['won_how'] == 'sprint of large group']
     
     if sort:
         year_data.sort_values(by = ['month', 'day'], inplace = True)
