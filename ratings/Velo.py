@@ -192,15 +192,23 @@ class Velo:
         for name in self.riders:
             self.riders[name].resolve_delta(race_name, race_weight, datestamp)
 
-    def new_season_regression(self, year):
+    def new_season_regression(self, year, remove_inactive_riders = True):
         """
         Regress all rider ratings back to the default initial rating at the onset
         of a new season.
         """
 
         self.races.append(Race('New Season', None, None, None))
+
+        to_remove = []
         for name in self.riders:
             self.riders[name].new_season(year, self.season_turnover)
+
+            if remove_inactive_riders and (year - self.riders[name].most_recent_active_year > 2):
+                to_remove.append(name)
+        
+        for name in to_remove:
+            del self.riders[name]
         
         self.save_system(date(year = year, month = 1, day = 1))
     
@@ -228,8 +236,8 @@ class Velo:
         self.rating_data['month'].append(date.month)
         self.rating_data['day'].append(date.day)
     
-    def save_system_data(self, rating_type, base_fname = 'data/system_data'):
-        pd.DataFrame(data = self.rating_data).to_csv(f'{base_fname}_{rating_type}.csv', index = False)
+    def save_system_data(self, rating_type, base_fname = 'data/system-data'):
+        pd.DataFrame(data = self.rating_data).to_csv(f'{base_fname}/{rating_type}.csv', index = False)
 
     def print_system(self, curr_year, min_rating = entities.DEFAULT_INITIAL_RATING, printing_limit = 50):
         '''
