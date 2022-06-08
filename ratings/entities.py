@@ -22,7 +22,7 @@ class Rider:
         self.delta = 0
         self.rating_history = [(self.rating, NEW_SEASON_RATING_KEYWORD)]
         self.race_history = []
-        self.most_recent_active_year = 2000
+        self.most_recent_active_year = 1900
     
     def increment_wins(self):
         self.season_wins += 1
@@ -101,6 +101,9 @@ class GlickoRider(Rider):
         self.volatility = initial_volatility
         self.num_races = 0
 
+        self.beginning_year_rating = initial_rating
+        self.races_this_year = 0
+
         self.rating_history = [(self.rating, self.rd, self.volatility, NEW_SEASON_RATING_KEYWORD)]
     
     def new_season(self, year, weight):
@@ -114,6 +117,9 @@ class GlickoRider(Rider):
         # update the rating
         self.rating = new_rating
         self.rating_history.append((self.rating, self.rd, self.volatility, date(year = year, month = 1, day = 1)))
+
+        self.beginning_year_rating = self.rating
+        self.races_this_year = 0
     
     def update_rating(self, race_name, race_weight, datestamp, 
             new_rating = None, new_rd = None, new_volatility = None):
@@ -130,6 +136,8 @@ class GlickoRider(Rider):
 
         # update the most recent year of competition for the rider
         self.most_recent_active_year = datestamp.year
+
+        self.races_this_year += 1
 
 class Race:
     def __init__(self, name, weight, datestamp, place):
