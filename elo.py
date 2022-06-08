@@ -12,12 +12,13 @@ from ratings import utils
 from ratings.Velo import Velo
 
 # ===== Script Parameters ===== #
-ACCEPTED_RACE_TYPE_CATS = ['gc', 'one-day-race', 'itt']
+ACCEPTED_RACE_TYPE_CATS = ['gc', 'one-day-race', 'itt', 'sprints']
 ACCEPTED_GENDER_CATS = ['men', 'women']
 VERBOSE = True
-MIN_YEAR = 2007
+MIN_YEAR = 1995
 MAX_YEAR = 2023
 SAVE_RESULTS = False
+NEW_SEASON_REGRESS_WEIGHT = 0.25
 
 # ===== Get Script Args ===== #
 EXPECTED_ARGS = 5
@@ -46,8 +47,12 @@ if race_type not in ACCEPTED_RACE_TYPE_CATS:
 
 # ===== Establish data paths for the script ===== #
 WEIGHTS_PATH = 'data/race_weight_data.json'
-RESULTS_DATA_PATH = 'data/men_velodata.csv' if gender == 'men' else 'data/women_velodata.csv'
+RESULTS_DATA_PATH = 'data/men_velodata2.csv' if gender == 'men' else 'data/women_velodata.csv'
 RACE_CLASSES_PATH = 'data/men_races_data.json' if gender == 'men' else 'data/women_races_data.json'
+
+# establish race alpha and beta
+DECAY_ALPHA = 1.5
+DECAY_BETA = 1.9 if race_type == 'sprints' else 1.8
 
 # results data
 DATA = pd.read_csv(RESULTS_DATA_PATH)
@@ -60,4 +65,18 @@ with open(WEIGHTS_PATH) as f:
     WEIGHTS = json.load(f)
 f.close()
 
-utils.elo_driver(DATA, RACE_CLASSES, WEIGHTS, beg_year, end_year, gender, race_type)
+#eval_results = utils.elo_driver(DATA, RACE_CLASSES, WEIGHTS, beg_year, end_year, gender, race_type, save_results = False, verbose = False, eval_races = ['tour-de-romandie'])
+utils.elo_driver(
+    DATA, RACE_CLASSES, WEIGHTS, 
+    beg_year, end_year, gender, race_type,
+    timegap_multiplier = 2,
+    decay_alpha = DECAY_ALPHA,
+    decay_beta = DECAY_BETA,
+    new_season_regress_weight = NEW_SEASON_REGRESS_WEIGHT,
+    eval_races = [
+        'tour-de-france', 'giro-d-italia', 'vuelta-a-espana',
+        'paris-nice', 'tirreno-adriatico', 'dauphine', 'volta-a-catalunya',
+        'itzulia-basque-country', 'tour-de-suisse'
+    ], 
+    save_results = True
+)
