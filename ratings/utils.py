@@ -125,38 +125,6 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
     
     return eval_results
 
-def optimize_elo(data_main, race_classes, race_weights, beg_year, end_year, gender, race_type,
-        timegap_multiplier = None,
-        decay_alpha = 1.5, decay_beta = 1.8, given_tt_length_adjustor = None,
-        given_tt_vert_adjustor = None, eval_races = []):
-    
-    weights_to_check = []
-    for w in range(2, 12):
-        for f in [0.25, 0.5, 1.5, 2]:
-            new = {gender: {race_type: {}}}
-            for w2 in race_weights[gender][race_type]:
-                if w != w2:
-                    new[gender][race_type][str(w2)] = race_weights[gender][race_type][str(w2)]
-            new[gender][race_type][str(w)] = race_weights[gender][race_type][str(w)] * f
-
-            weights_to_check.append(new)
-
-    reses = []
-    for option in tqdm(weights_to_check):
-        
-        res = elo_driver(
-            data_main, race_classes, option, beg_year, end_year, gender, race_type,
-            decay_alpha = decay_alpha, decay_beta = decay_beta, given_tt_length_adjustor = given_tt_length_adjustor,
-            given_tt_vert_adjustor = given_tt_vert_adjustor, save_results = False, verbose = False,
-            eval_races = eval_races
-        )
-        reses.append(res_eval(res))
-    
-    for u, v in zip(weights_to_check, reses):
-        print(u)
-        print(v)
-        print()
-
 def res_eval(res):
 
     spearmans = []
