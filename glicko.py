@@ -15,7 +15,7 @@ from ratings.Velo import Velo
 ACCEPTED_RACE_TYPE_CATS = ['gc', 'one-day-race', 'itt']
 ACCEPTED_GENDER_CATS = ['men', 'women']
 VERBOSE = True
-MIN_YEAR = 2007
+MIN_YEAR = 1995
 MAX_YEAR = 2023
 SAVE_RESULTS = False
 
@@ -60,4 +60,4 @@ with open(WEIGHTS_PATH) as f:
     WEIGHTS = json.load(f)
 f.close()
 
-utils.glicko_driver(DATA, RACE_CLASSES, WEIGHTS, beg_year, end_year, gender, race_type)
+utils.glicko_driver(DATA, RACE_CLASSES, WEIGHTS, beg_year, end_year, gender, race_type, fname = f'{gender}-{race_type}-{beg_year}-{end_year}')

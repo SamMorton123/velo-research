@@ -5,7 +5,10 @@ May 2, 2022
 """
 
 from datetime import date
+import json
 import numpy as np
+import os
+import pickle
 from termcolor import colored
 
 from ratings import Velo
@@ -13,14 +16,14 @@ from ratings.entities import GlickoRider, Race
 
 SCALE_CONSTANT = 173.7178
 PLACE_DIFF_CONSTANT = 50
-MATCHUP_WEIGHT_SCALE = 0.4
+MATCHUP_WEIGHT_SCALE = 0.05
 RD_THRESH = 40
 
 
 class VGlicko(Velo.Velo):
 
     def __init__(self, initial_rating: int = 1500, initial_rd: int = 350, 
-            intial_volatility: float = 0.06, tau: float = 0.05,
+            intial_volatility: float = 0.06, tau: float = 0.000001,
             decay_alpha: float = 1.6, decay_beta: float = 1.5,
             season_turnover_default: float = 0.2, 
             elo_q_base: int = Velo.ELO_Q_BASE, elo_q_exponent_denom: int = Velo.ELO_Q_EXPONENT_DENOM):
@@ -172,7 +175,7 @@ class VGlicko(Velo.Velo):
                 new_volatility = new_vols[rider]
             )
         
-    def print_system(self, curr_year, printing_limit = 50):
+    def print_system(self, curr_year, printing_limit = 100):
         
         # sort the list of rider objects by rating
         riders_sorted = sorted(
@@ -205,6 +208,25 @@ class VGlicko(Velo.Velo):
                 f'Num races: {rider.num_races}', 
                 f'Active: {rider.most_recent_active_year}, Age: {rider.age}'
             )
+        
+    def save_ratings(self, fname):
+
+        if not os.path.exists('system-data'): os.mkdir('system-data')
+
+        ratings_dict = {}
+        for rider in self.riders:
+            
+            ratings_dict[rider] = {
+                'rating': self.riders[rider].rating,
+                'rd': self.riders[rider].rd,
+                'volatility': self.riders[rider].volatility,
+                'year_delta': self.riders[rider].rating - self.riders[rider].beginning_year_rating
+            }
+
+
+        with open(f'system-data/{fname}', 'w') as f:
+            json.dump(ratings_dict, f)
+        f.close()
 
     def new_rating_rd(self, g2_ratings, g2_v, new_vols, matchup_weights, rider):
 
