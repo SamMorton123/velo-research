@@ -1,5 +1,23 @@
 {
     "gc": {
+        "2018": {
+            "tour-of-chongming-island-world-cup": 6,
+            "amgen-tour-of-california-we": 3,
+            "iurreta-emakumeen-bira": 3,
+            "the-women-s-tour": 5,
+            "giro-d-italia-femminile": 1,
+            "ladies-tour-of-norway": 5,
+            "simac-ladies-tour": 3,
+            "ceratzit-challenge-by-la-vuelta": 6,
+            "santos-women-s-tour": 5,
+            "easytoys-bloeizone-fryslan-tour": 6,
+            "grand-prix-elsy-jacobs": 6,
+            "the-women-s-tour-de-yorkshire-race": 6,
+            "int-thuringen-rundfahrt-der-frauen": 5,
+            "bene-ladies-tour": 5,
+            "watersly-ladies-challenge": 6,
+            "tour-cycliste-feminin-international-ardeche": 4
+        },
         "2019": {
             "tour-of-chongming-island-world-cup": 6,
             "amgen-tour-of-california-we": 3,
@@ -44,7 +62,13 @@
         },
         "2022": {
             "setmana-ciclista-valenciana": 3,
-            "easytoys-bloeizone-fryslan-tour": 5
+            "easytoys-bloeizone-fryslan-tour": 6,
+            "itzulia-women": 3,
+            "gc tour-de-bretagne-feminin": 5,
+            "vuelta-ciclista-andalucia-ruta-del-sol": 5,
+            "int-thuringen-rundfahrt-der-frauen": 5,
+            "vuelta-a-burgos-feminas": 3,
+            "prudential-ride-london-gp-we": 6
         }
     },
     "one-day-race": {
