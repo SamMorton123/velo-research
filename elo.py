@@ -50,29 +50,29 @@ WEIGHTS_PATH = 'data/race_weight_data.json'
 RESULTS_DATA_PATH = 'data/men_velodata2.csv' if gender == 'men' else 'data/women_velodata.csv'
 RACE_CLASSES_PATH = 'data/men_races_data.json' if gender == 'men' else 'data/women_races_data.json'
 
+# ===== Load settings for race type and gender ===== #
+with open(f'data/settings/{gender}-{race_type}.json') as f:
+    settings = json.load(f)
+f.close()
+
 # establish race alpha and beta
-DECAY_ALPHA = 1.5
-DECAY_BETA = 1.9 if race_type == 'sprints' else 1.8
+DECAY_ALPHA = settings['decay-alpha']
+DECAY_BETA = settings['decay-beta']
+TIMEGAP_MULT = settings['timegap-multiplier']
+RACE_CLASSES = settings['race-classes']
+WEIGHTS = settings['race-class-weights']
 
 # results data
 DATA = pd.read_csv(RESULTS_DATA_PATH)
 
-# store race class variables here... to be converted to actual weights using WEIGHTS variable
-with open(RACE_CLASSES_PATH) as f:
-    RACE_CLASSES = json.load(f)
-f.close()
-with open(WEIGHTS_PATH) as f:
-    WEIGHTS = json.load(f)
-f.close()
-
-#eval_results = utils.elo_driver(DATA, RACE_CLASSES, WEIGHTS, beg_year, end_year, gender, race_type, save_results = False, verbose = False, eval_races = ['tour-de-romandie'])
 utils.elo_driver(
     DATA, RACE_CLASSES, WEIGHTS, 
     beg_year, end_year, gender, race_type,
-    timegap_multiplier = 2,
+    timegap_multiplier = TIMEGAP_MULT,
     decay_alpha = DECAY_ALPHA,
     decay_beta = DECAY_BETA,
     new_season_regress_weight = NEW_SEASON_REGRESS_WEIGHT,
+    given_tt_vert_adjustor = 'flat' if race_type == 'itt' else None,
     eval_races = [
         'tour-de-france', 'giro-d-italia', 'vuelta-a-espana',
         'paris-nice', 'tirreno-adriatico', 'dauphine', 'volta-a-catalunya',
