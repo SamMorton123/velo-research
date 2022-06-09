@@ -27,6 +27,7 @@ WORLD_OLYMPICS_ITT_NAMES = [
 RAW_RESULT_NUM_PRINTED = 15  # number of finishers printed in raw data per race if VERBOSE = True
 NEW_SEASON_REGRESS_WEIGHT = 0.4  # weight the degree to which rider scores converge to 1500 during off season
 EVAL_COLLECTION_LIM = 100  # amount of riders considered when evaluating predictive performance of rankings
+SPRINT_NUM_SAME_TIME_FINISH_THRESH = 30
 
 def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender, race_type,
         timegap_multiplier = None, new_season_regress_weight = NEW_SEASON_REGRESS_WEIGHT,
@@ -58,19 +59,34 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
         for race in year_data['name'].unique():
 
             # if race is not contained within the weight data, skip
-            if race not in race_classes[race_type][str(year)]:
-                continue
+            # if race not in race_classes[race_type][str(year)]:
+            #     continue
             
             stages_data = prepare_race_data(year_data, race)
             for stage_data in stages_data:
 
-                # get the stage number
+                # get the stage number and length
                 stage_name = stage_data['stage'].iloc[0]
-
                 stage_length = stage_data['length'].iloc[0]   
 
+                # sprint ranking must make sure appropriate number of riders
+                # finished on the same time
+                if race_type == 'sprints':
+                    num_same_time = 0
+                    for t in stage_data['time']:
+                        if t == 0: num_same_time += 1
+                        else: break
+                    if num_same_time < SPRINT_NUM_SAME_TIME_FINISH_THRESH:
+                        continue
+
                 # get race weight
-                race_weight = race_weights[gender][race_type][str(race_classes[race_type][str(year)][race])]
+                if race_type == 'gc':
+                    race_weight = race_weights[str(race_classes[str(year)][race])]
+                else:
+                    points_scale = stage_data['points_scale'].iloc[0]
+                    if isinstance(points_scale, float) or points_scale not in race_weights:
+                        continue
+                    race_weight = race_weights[points_scale]
 
                 # adjust race weight if race_type is TT and types given
                 if race_type == 'itt':
