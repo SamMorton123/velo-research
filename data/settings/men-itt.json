@@ -1,0 +1,16 @@
+{
+    "decay-alpha": 2.2,
+    "decay-beta": 1.8,
+    "timegap-multiplier": 2,
+    "race-classes": {},
+    "race-class-weights": {
+        "Worlds.TT": 20,
+        "Olympics.TT": 16,
+        "GT.A.Stage": 15,
+        "GT.B.Stage": 10,
+        "2.WT.Stage": 8,
+        "2.PRO.Stage": 4,
+        "2.1.Stage": 1.5,
+        "2.2.Stage": 0.5
+    }
+}
