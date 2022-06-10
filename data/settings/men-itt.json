@@ -2,6 +2,7 @@
     "decay-alpha": 2.1,
     "decay-beta": 1.8,
     "timegap-multiplier": 2,
+    "new-season-regression": 0.25,
     "race-classes": {},
     "race-class-weights": {
         "Worlds.TT": 20,
