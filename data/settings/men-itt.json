@@ -1,5 +1,5 @@
 {
-    "decay-alpha": 2.2,
+    "decay-alpha": 2.1,
     "decay-beta": 1.8,
     "timegap-multiplier": 2,
     "race-classes": {},
