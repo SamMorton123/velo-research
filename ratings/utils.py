@@ -81,7 +81,10 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
 
                 # get race weight
                 if race_type == 'gc':
-                    race_weight = race_weights[str(race_classes[str(year)][race])]
+                    if race in race_weights[str(year)]:
+                        race_weight = race_classes[str(race_weights[str(year)][race])]
+                    else:
+                        continue
                 else:
                     points_scale = stage_data['points_scale'].iloc[0]
                     if isinstance(points_scale, float) or points_scale not in race_weights:
