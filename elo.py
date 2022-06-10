@@ -18,7 +18,6 @@ VERBOSE = True
 MIN_YEAR = 1995
 MAX_YEAR = 2023
 SAVE_RESULTS = False
-NEW_SEASON_REGRESS_WEIGHT = 0.25
 
 # ===== Get Script Args ===== #
 EXPECTED_ARGS = 5
@@ -47,7 +46,7 @@ if race_type not in ACCEPTED_RACE_TYPE_CATS:
 
 # ===== Establish data paths for the script ===== #
 WEIGHTS_PATH = 'data/race_weight_data.json'
-RESULTS_DATA_PATH = 'data/men_velodata2.csv' if gender == 'men' else 'data/women_velodata.csv'
+RESULTS_DATA_PATH = 'data/men_velodata2.csv' if gender == 'men' else 'data/women_velodata2.csv'
 RACE_CLASSES_PATH = 'data/men_races_data.json' if gender == 'men' else 'data/women_races_data.json'
 
 # ===== Load settings for race type and gender ===== #
@@ -61,6 +60,7 @@ DECAY_BETA = settings['decay-beta']
 TIMEGAP_MULT = settings['timegap-multiplier']
 RACE_CLASSES = settings['race-classes']
 WEIGHTS = settings['race-class-weights']
+NEW_SEASON_REGRESS_WEIGHT = settings['new-season-regression']
 
 # results data
 DATA = pd.read_csv(RESULTS_DATA_PATH)
