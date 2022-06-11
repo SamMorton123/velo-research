@@ -12,3 +12,5 @@ Other similar projects also delve into prediction and probability using Elo rati
 The [VeloResearch Twitter account](https://twitter.com/veloresearch) will be updated more often with up-to-date ratings for different disciplines, but here are a couple of examples of the VeloResearch Elo ratings.
 
 First, we have the general GC picture across all of men's pro cycling as of June 10, 2022: ![](research/figures/gc-men-20220610.png).
+
+Further, we have the GC Elo ratings of riders entered in the 2022 Tour de Suisse, a Tour de France preparation race, prior to the start of the race: ![](research/figures/tour-de-suisse-2022-gc-men-lollipop.png)
