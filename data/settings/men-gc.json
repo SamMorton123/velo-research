@@ -1,8 +1,8 @@
 {
-    "decay-alpha": 1.65,
-    "decay-beta": 2.2,
+    "decay-alpha": 1.9,
+    "decay-beta": 1.8,
     "timegap-multiplier": 1,
-    "new-season-regression": 0.25,
+    "new-season-regression": 0.2,
     "race-classes": {
         "0": 26,
         "1": 18,

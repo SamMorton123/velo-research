@@ -1,0 +1,88 @@
+{
+    "decay-alpha": 1.65,
+    "decay-beta": 2.2,
+    "timegap-multiplier": 1,
+    "new-season-regression": 0.25,
+    "race-classes": {
+        "0": 11.5,
+        "1": 8,
+        "2": 5,
+        "3": 3.25,
+        "4": 2,
+        "5": 2,
+        "6": 0.25
+    },
+    "race-class-weights": {
+        "2018": {
+            "tour-of-chongming-island-world-cup": 6,
+            "amgen-tour-of-california-we": 3,
+            "iurreta-emakumeen-bira": 3,
+            "the-women-s-tour": 5,
+            "giro-d-italia-femminile": 1,
+            "ladies-tour-of-norway": 5,
+            "simac-ladies-tour": 3,
+            "ceratzit-challenge-by-la-vuelta": 6,
+            "santos-women-s-tour": 5,
+            "easytoys-bloeizone-fryslan-tour": 6,
+            "grand-prix-elsy-jacobs": 6,
+            "the-women-s-tour-de-yorkshire-race": 6,
+            "int-thuringen-rundfahrt-der-frauen": 5,
+            "bene-ladies-tour": 5,
+            "watersly-ladies-challenge": 6,
+            "tour-cycliste-feminin-international-ardeche": 4
+        },
+        "2019": {
+            "tour-of-chongming-island-world-cup": 6,
+            "amgen-tour-of-california-we": 3,
+            "iurreta-emakumeen-bira": 3,
+            "the-women-s-tour": 2,
+            "giro-d-italia-femminile": 1,
+            "ladies-tour-of-norway": 5,
+            "simac-ladies-tour": 6,
+            "ceratzit-challenge-by-la-vuelta": 4,
+            "santos-women-s-tour": 5,
+            "easytoys-bloeizone-fryslan-tour": 6,
+            "the-women-s-tour-de-yorkshire-race": 6,
+            "grand-prix-elsy-jacobs": 5,
+            "vuelta-a-burgos-feminas": 4,
+            "women-s-tour-of-scotland": 6,
+            "colorado-classic-we": 5,
+            "lotto-belgium-tour": 6,
+            "tour-cycliste-feminin-international-ardeche": 4
+        },
+        "2020": {
+            "giro-d-italia-femminile": 1,
+            "ceratzit-challenge-by-la-vuelta": 3,
+            "santos-women-s-tour": 5,
+            "womens-herald-sun-tour": 6,
+            "tour-cycliste-feminin-international-ardeche": 4
+        },
+        "2021": {
+            "vuelta-a-burgos-feminas": 3,
+            "ladies-tour-of-norway": 3,
+            "simac-ladies-tour": 3,
+            "ceratzit-challenge-by-la-vuelta": 3,
+            "the-women-s-tour": 2,
+            "grand-prix-elsy-jacobs": 6,
+            "int-thuringen-rundfahrt-der-frauen": 6,
+            "giro-d-italia-femminile": 1,
+            "easytoys-bloeizone-fryslan-tour": 6,
+            "setmana-ciclista-valenciana": 4,
+            "tour-de-suisse-women": 6,
+            "lotto-belgium-tour": 6,
+            "bene-ladies-tour": 6,
+            "tour-cycliste-feminin-international-ardeche": 4
+        },
+        "2022": {
+            "setmana-ciclista-valenciana": 3,
+            "easytoys-bloeizone-fryslan-tour": 6,
+            "itzulia-women": 3,
+            "gc tour-de-bretagne-feminin": 5,
+            "vuelta-ciclista-andalucia-ruta-del-sol": 5,
+            "int-thuringen-rundfahrt-der-frauen": 5,
+            "vuelta-a-burgos-feminas": 3,
+            "prudential-ride-london-gp-we": 6,
+            "the-women-s-tour": 2
+        }
+    }
+}
