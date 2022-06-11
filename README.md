@@ -1,0 +1,2 @@
+## Introducing VeloResearch cycling Elo ratings
+This project was inspired by FiveThirtyEight's use of Elo Ratings in sports such as the NFL and cycling content creators such as the Lanterne Rouge Cycling Podcast (run by Patrick Broe and Benji Naesen) but is by no means the first application of Elo Ratings to cycling. There are existing projects such as that of [Motirolo Analyses](https://mortirolo.netlify.app/) which track cycling Elo ratings for multiple disciplines, as well as Twitter accounts such as El T\'io
