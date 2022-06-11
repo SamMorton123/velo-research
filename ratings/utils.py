@@ -13,7 +13,6 @@ from tqdm import tqdm
 # local
 from ratings import RaceSelection
 from ratings.Velo import Velo
-from ratings.VGlicko import VGlicko
 
 PLACES_COL = 'place'
 RIDER_COL = 'rider'
