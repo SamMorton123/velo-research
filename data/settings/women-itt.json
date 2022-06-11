@@ -1,12 +1,14 @@
 {
-    "decay-alpha": 2.1,
+    "decay-alpha": 1.4,
     "decay-beta": 1.8,
-    "timegap-multiplier": 2,
+    "timegap-multiplier": 4,
     "new-season-regression": 0.25,
     "race-classes": {},
     "race-class-weights": {
-       "2.WT.Stage": 8,
-       "F-2.PRO.Stage": 4,
-       "F-2.1.Stage": 1.5
+        "F-Worlds.TT": 12,
+        "F-OS.TT": 10, 
+        "2.WT.Stage": 8,
+        "F-2.PRO.Stage": 4,
+        "F-2.1.Stage": 1.5
     }
 }
