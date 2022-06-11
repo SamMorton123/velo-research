@@ -45,7 +45,6 @@ if race_type not in ACCEPTED_RACE_TYPE_CATS:
     raise Exception(f'Race type must be given as one of {ACCEPTED_RACE_TYPE_CATS} for data collection.')
 
 # ===== Establish data paths for the script ===== #
-WEIGHTS_PATH = 'data/race_weight_data.json'
 RESULTS_DATA_PATH = 'data/men_velodata.csv' if gender == 'men' else 'data/women_velodata.csv'
 
 # ===== Load settings for race type and gender ===== #
