@@ -180,10 +180,6 @@ class Velo:
         rider1.update_delta(rider1_delta)
         rider2.update_delta(rider2_delta)
 
-        # update wins/losses
-        rider1.increment_wins()
-        rider2.increment_losses()
-
     def apply_all_deltas(self, race_name, race_weight, datestamp):
         """
         Apply all outstanding Elo deltas for riders in the system.
@@ -209,6 +205,7 @@ class Velo:
         
         for name in to_remove:
             del self.riders[name]
+            del self.rating_data[name]
         
         self.save_system(date(year = year, month = 1, day = 1))
     
@@ -273,7 +270,7 @@ class Velo:
                 delta = colored(delta, color)
 
             print(
-                f'{place}.', f'{rider.name} - {round(rider.rating, 2)};', 
+                f'{place}.', f'{rider.name} - {round(rider.rating, 2)};',
                 f'Active: {rider.most_recent_active_year}, Age: {rider.age}', delta
             )
 

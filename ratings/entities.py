@@ -15,20 +15,12 @@ class Rider:
         # init instance variables
         self.name = name
         self.rating = initial_rating
-        self.season_wins = 0
-        self.season_losses = 0
         self.team = team
         self.age = age
         self.delta = 0
         self.rating_history = [(self.rating, NEW_SEASON_RATING_KEYWORD)]
         self.race_history = []
         self.most_recent_active_year = 1900
-    
-    def increment_wins(self):
-        self.season_wins += 1
-    
-    def increment_losses(self):
-        self.season_losses += 1
     
     def add_new_race(self, race_name, race_weight, race_date, place):
         new_race = Race(
@@ -52,6 +44,10 @@ class Rider:
         the delta.
         """
 
+        # update the most recent year of competition for the rider, if the delta != 0
+        if self.delta != 0:
+            self.most_recent_active_year = datestamp.year
+
         # add delta to rating
         self.rating += self.delta
 
@@ -60,9 +56,6 @@ class Rider:
 
         # add new rating to rating history
         self.rating_history.append((self.rating, datestamp))
-
-        # update the most recent year of competition for the rider
-        self.most_recent_active_year = datestamp.year
     
     def new_season(self, year, weight):
         """
