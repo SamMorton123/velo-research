@@ -37,11 +37,20 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
     """
     Given necessary params, init an Elo system and run through all the applicable data,
     tracking changes to rider ratings over time. Returns an Elo object.
+
+    This method is a little long; need to modularize soon.
     """
 
     # init elo system variable
-    elo = Velo(decay_alpha = decay_alpha, decay_beta = decay_beta, season_turnover_default = new_season_regress_weight)
+    elo = Velo(
+        decay_alpha = decay_alpha,
+        decay_beta = decay_beta,
+        season_turnover_default = new_season_regress_weight
+    )
 
+    # dict to track the elo ratings of riders at the onset of
+    # specific races; saving data here will make it easier to
+    # prepare data for future ML applications
     eval_results = {}
 
     # loop through each year in the gc data
@@ -57,12 +66,10 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
         
         # loop through each race in the current year's data
         for race in year_data['name'].unique():
-
-            # if race is not contained within the weight data, skip
-            # if race not in race_classes[race_type][str(year)]:
-            #     continue
             
+            # extract data for individual stages
             stages_data = prepare_race_data(year_data, race)
+            
             for stage_data in stages_data:
 
                 # get the stage number and length
@@ -72,29 +79,48 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
                 # sprint ranking must make sure appropriate number of riders
                 # finished on the same time
                 if race_type == 'sprints':
+                    
+                    # get the number of riders that finished on zero seconds
+                    # this is the number of riders that finished together in
+                    # the main group
                     num_same_time = 0
                     for t in stage_data['time']:
                         if t == 0: num_same_time += 1
                         else: break
+                    
+                    # do not consider this stage if too few riders finish in the
+                    # main group; this is to further exclude finishes that are
+                    # not necessarily bunch sprints
                     if num_same_time < SPRINT_NUM_SAME_TIME_FINISH_THRESH:
                         continue
 
                 # get race weight
                 if race_type == 'gc':
+                    
+                    # for GC rankings, the race must be in the race_classes dict
+                    # to be considered for the rankings
                     if race in race_weights[str(year)]:
                         race_weight = race_classes[str(race_weights[str(year)][race])]
                     else:
                         continue
                 else:
+
+                    # for non-GC race types, get the race's weight using its points scale
                     points_scale = stage_data['points_scale'].iloc[0]
-                    if isinstance(points_scale, float):
-                        continue
+                    
+                    # this allows us to ignore races with a points scale of nan
+                    if isinstance(points_scale, float): continue
+                    
+                    # verify the points scale is amongst those the rating system should consider
                     points_scale.strip()
                     if points_scale not in race_weights:
                         continue
+                    
                     race_weight = race_weights[points_scale]
 
                 # adjust race weight if race_type is TT and types given
+                # this allows us to adjust TT ratings to give more or less
+                # weight to different types of TTs
                 if race_type == 'itt':
                     race_weight = RaceSelection.weight_itt_by_type(
                         stage_data, (given_tt_length_adjustor, given_tt_vert_adjustor), race_weight
@@ -103,6 +129,7 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
                 # get the race's date as date object
                 stage_date = get_race_date(stage_data)
 
+                # save the results and rating in eval_results
                 eval_results[f'{race}-{year}-{stage_name}'] = {
                     'date': stage_date.isoformat(),
                     'actual': list(stage_data['rider'].iloc[0: EVAL_COLLECTION_LIM]),
@@ -138,10 +165,16 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
         if year < end_year - 1:
             elo.new_season_regression(year)
 
+    # save Elo system results
     if save_results:
+        
+        # saves the elo system to a csv for easy access later
         elo.save_system_data(f'{race_type}_{gender}')
+        
+        # saves the eval data as json separately for use in creating better organized data
+        # for ML purposes later
         if len(eval_races) > 0:
-            with open(f'system-data/{gender}-{race_type}-{beg_year}-{end_year}-eval.json', 'w') as f:
+            with open(f'data/eval-data/{gender}-{race_type}-{beg_year}-{end_year}-eval.json', 'w') as f:
                 json.dump(eval_results, f)
             f.close()
     
