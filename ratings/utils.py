@@ -87,7 +87,10 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
                         continue
                 else:
                     points_scale = stage_data['points_scale'].iloc[0]
-                    if isinstance(points_scale, float) or points_scale not in race_weights:
+                    if isinstance(points_scale, float):
+                        continue
+                    points_scale.strip()
+                    if points_scale not in race_weights:
                         continue
                     race_weight = race_weights[points_scale]
 
