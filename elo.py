@@ -46,8 +46,7 @@ if race_type not in ACCEPTED_RACE_TYPE_CATS:
 
 # ===== Establish data paths for the script ===== #
 WEIGHTS_PATH = 'data/race_weight_data.json'
-RESULTS_DATA_PATH = 'data/men_velodata2.csv' if gender == 'men' else 'data/women_velodata2.csv'
-RACE_CLASSES_PATH = 'data/men_races_data.json' if gender == 'men' else 'data/women_races_data.json'
+RESULTS_DATA_PATH = 'data/men_velodata.csv' if gender == 'men' else 'data/women_velodata.csv'
 
 # ===== Load settings for race type and gender ===== #
 with open(f'data/settings/{gender}-{race_type}.json') as f:
