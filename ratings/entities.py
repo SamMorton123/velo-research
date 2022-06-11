@@ -6,6 +6,7 @@ in addition to more sophisticated rating systems in the future.
 from datetime import date
 
 # constants
+MAX_DELTA = 300
 DEFAULT_INITIAL_RATING = 1500
 NEW_SEASON_RATING_KEYWORD = 'newseason'
 
@@ -49,7 +50,7 @@ class Rider:
             self.most_recent_active_year = datestamp.year
 
         # add delta to rating
-        self.rating += self.delta
+        self.rating += min(self.delta, MAX_DELTA)
 
         # reset delta
         self.delta = 0
