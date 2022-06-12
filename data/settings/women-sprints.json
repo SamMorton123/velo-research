@@ -2,7 +2,7 @@
     "decay-alpha": 2.5,
     "decay-beta": 2,
     "timegap-multiplier": 1,
-    "new-season-regression": 0.4,
+    "new-season-regression": 0.25,
     "race-classes": {},
     "race-class-weights": {
         "F-WWT": 14,

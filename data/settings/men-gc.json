@@ -794,8 +794,8 @@
         "2021": {
             "tour-de-france": 0,
             "vuelta-a-espana": 1,
-            "tirreno-adriatico": 3,
-            "paris-nice": 3,
+            "tirreno-adriatico": 2,
+            "paris-nice": 2,
             "itzulia-basque-country": 4,
             "giro-d-italia": 1,
             "volta-a-catalunya": 4,
@@ -852,8 +852,8 @@
             "uae-tour": 5,
             "tour-of-rwanda": 11,
             "gran-camino": 9,
-            "paris-nice": 3,
-            "tirreno-adriatico": 3,
+            "paris-nice": 2,
+            "tirreno-adriatico": 2,
             "settimana-internazionale-coppi-e-bartali": 9,
             "volta-a-catalunya": 4,
             "itzulia-basque-country": 4,
@@ -865,7 +865,11 @@
             "giro-d-italia": 1,
             "4-jours-de-dunkerque": 12,
             "tour-of-norway": 7,
-            "boucles-de-la-mayenne": 11
+            "boucles-de-la-mayenne": 11,
+            "adriatica-ionica-race": 11,
+            "dauphine": 2,
+            "teleflex-tour": 12,
+            "tour-de-suisse": 2
         }
     }
 }
