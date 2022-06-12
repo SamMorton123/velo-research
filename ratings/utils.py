@@ -98,7 +98,7 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
                     
                     # for GC rankings, the race must be in the race_classes dict
                     # to be considered for the rankings
-                    if race in race_weights[str(year)]:
+                    if str(year) in race_weights and race in race_weights[str(year)]:
                         race_weight = race_classes[str(race_weights[str(year)][race])]
                     else:
                         continue
@@ -111,7 +111,7 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
                     if isinstance(points_scale, float): continue
                     
                     # verify the points scale is amongst those the rating system should consider
-                    points_scale.strip()
+                    points_scale = points_scale.strip()
                     if points_scale not in race_weights:
                         continue
                     
