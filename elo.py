@@ -59,6 +59,8 @@ TIMEGAP_MULT = settings['timegap-multiplier']
 RACE_CLASSES = settings['race-classes']
 WEIGHTS = settings['race-class-weights']
 NEW_SEASON_REGRESS_WEIGHT = settings['new-season-regression']
+TT_LENGTH_ADJUSTOR = settings['tt-length-adjustor'] if race_type == 'itt' else None
+TT_VERT_ADJUSTOR = settings['tt-vert-adjustor'] if race_type == 'itt' else None
 
 # results data
 DATA = pd.read_csv(RESULTS_DATA_PATH)
@@ -70,7 +72,8 @@ utils.elo_driver(
     decay_alpha = DECAY_ALPHA,
     decay_beta = DECAY_BETA,
     new_season_regress_weight = NEW_SEASON_REGRESS_WEIGHT,
-    given_tt_vert_adjustor = 'flat' if race_type == 'itt' else None,
+    given_tt_length_adjustor = TT_LENGTH_ADJUSTOR,
+    given_tt_vert_adjustor = TT_VERT_ADJUSTOR,
     eval_races = [
         'tour-de-france', 'giro-d-italia', 'vuelta-a-espana',
         'paris-nice', 'tirreno-adriatico', 'dauphine', 'volta-a-catalunya',
