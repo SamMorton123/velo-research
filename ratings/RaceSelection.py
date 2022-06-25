@@ -4,8 +4,8 @@ Module handling special operations relating to race selection.
 April 30, 2022
 """
 
-PERMITTED_TT_LENGTH_KWDS = ['prologue', 'mid-length', 'long', None]
-PERMITTED_ITT_VERT_KWDS = ['flat', 'hilly', None]
+PERMITTED_TT_LENGTH_KWDS = ['prologue', 'mid-length', 'long', "none", None]
+PERMITTED_ITT_VERT_KWDS = ['flat', 'hilly', "none", None]
 
 E = 0.3
 FR_MAX = 1
