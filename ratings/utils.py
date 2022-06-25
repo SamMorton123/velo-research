@@ -2,11 +2,13 @@
 Support module for Elo system.
 """
 
+from bs4 import BeautifulSoup
 from datetime import date
 import json
 import math
 import numpy as np
 import pandas as pd
+import requests
 from scipy.stats import spearmanr
 from tqdm import tqdm
 
@@ -131,16 +133,14 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
                 # save the results and rating in eval_results
                 eval_results[f'{race}-{year}-{stage_name}'] = {
                     'date': stage_date.isoformat(),
-                    'actual': list(stage_data['rider'].iloc[0: EVAL_COLLECTION_LIM]),
+                    'actual': list(stage_data['rider']),
+                    'timegaps': list(stage_data['time']),
                     'top_active': sorted([
                         [rider, elo.riders[rider].rating] if rider in elo.riders else [rider, 1500]
                         for rider in stage_data['rider']
-                    ], key = lambda t: t[1], reverse = True)[0: EVAL_COLLECTION_LIM],
+                    ], key = lambda t: t[1], reverse = True),
                     'length': stage_length
                 }
-
-                # save the elo system in a dictionary
-                elo.save_system(stage_date)
                 
                 # simulate the race and add it to the rankings
                 elo.simulate_race(race, stage_data, race_weight, timegap_multiplier)
@@ -173,7 +173,7 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
         # saves the eval data as json separately for use in creating better organized data
         # for ML purposes later
         if len(eval_races) > 0:
-            with open(f'data/eval-data/{gender}-{race_type}-{beg_year}-{end_year}-eval.json', 'w') as f:
+            with open(f'data/eval-data/{gender}-{race_type}-{beg_year}-{end_year}-{given_tt_vert_adjustor}-{given_tt_length_adjustor}-eval.json', 'w') as f:
                 json.dump(eval_results, f)
             f.close()
     
@@ -315,3 +315,32 @@ def remove_banned_riders(df):
 
     # return the df with the DQ'd riders removed
     return df.drop(labels = to_drop)
+
+def get_startlist(name, year):
+    """
+    Given the name of a race and the year, return a list of riders on the startlist
+    for the race.
+    
+    NOTE: name param must be given in the format which ProCyclingStats uses in its
+    links. For example, if you'd like the startlist for the Tour de Suisse, you would
+    given 'tour-de-suisse' as the name param.
+    """
+    
+    # get page html
+    link = f'https://www.procyclingstats.com/race/{name}/{year}/gc/startlist'
+    page = requests.get(link)
+    soup = BeautifulSoup(page.content, 'html.parser')
+    
+    # get the riders from each team starting the race
+    teams = {}
+    lis = soup.find_all('li', class_ = 'team')
+    for li in lis:
+        team = li.find_all('a')[0].text
+        uls = li.find_all('ul')[0]
+        roster = [rider.find_all('a')[0].text for rider in uls.find_all('li')]
+        teams[team] = roster
+    
+    # return the startlist as a list of rider names
+    startlist = [rider for team in teams for rider in teams[team]]
+    return startlist
+
