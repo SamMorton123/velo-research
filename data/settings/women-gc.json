@@ -4,11 +4,11 @@
     "timegap-multiplier": 1,
     "new-season-regression": 0.15,
     "race-classes": {
-        "0": 11.5,
-        "1": 8,
-        "2": 5,
-        "3": 3.25,
-        "4": 2,
+        "0": 15,
+        "1": 12,
+        "2": 8,
+        "3": 6,
+        "4": 4,
         "5": 2,
         "6": 0.25
     },
@@ -151,7 +151,8 @@
             "int-thuringen-rundfahrt-der-frauen": 5,
             "vuelta-a-burgos-feminas": 3,
             "prudential-ride-london-gp-we": 6,
-            "the-women-s-tour": 2
+            "the-women-s-tour": 2,
+            "tour-de-suisse-women": 2
         }
     }
 }
