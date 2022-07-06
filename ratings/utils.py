@@ -146,7 +146,7 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
                 elo.simulate_race(race, stage_data, race_weight, timegap_multiplier)
                 
                 # apply changes to rider elos
-                elo.apply_all_deltas(race, race_weight, stage_date)
+                elo.apply_all_deltas(race, race_type, race_weight, stage_date)
                 
                 if verbose:
 
