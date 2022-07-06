@@ -6,7 +6,11 @@ in addition to more sophisticated rating systems in the future.
 from datetime import date
 
 # constants
-MAX_DELTA = 300
+MAX_DELTAS = {
+    'gc': 300,
+    'itt': 125,
+    'sprints': 90
+}
 DEFAULT_INITIAL_RATING = 1500
 NEW_SEASON_RATING_KEYWORD = 'newseason'
 
@@ -36,7 +40,7 @@ class Rider:
     def update_delta(self, d):
         self.delta += d
     
-    def resolve_delta(self, race_name, race_weight, datestamp):
+    def resolve_delta(self, race_name, race_type, race_weight, datestamp):
         """
         The Elo system calculates changes in scores via head-to-head results. However,
         the head-to-head matchups are treated as if they occur simultaneously. The delta
@@ -50,7 +54,7 @@ class Rider:
             self.most_recent_active_year = datestamp.year
 
         # add delta to rating
-        self.rating += min(self.delta, MAX_DELTA)
+        self.rating += min(self.delta, MAX_DELTAS[race_type])
 
         # reset delta
         self.delta = 0
