@@ -180,13 +180,13 @@ class Velo:
         rider1.update_delta(rider1_delta)
         rider2.update_delta(rider2_delta)
 
-    def apply_all_deltas(self, race_name, race_weight, datestamp):
+    def apply_all_deltas(self, race_name, race_type, race_weight, datestamp):
         """
         Apply all outstanding Elo deltas for riders in the system.
         """
 
         for name in self.riders:
-            self.riders[name].resolve_delta(race_name, race_weight, datestamp)
+            self.riders[name].resolve_delta(race_name, race_type, race_weight, datestamp)
 
     def new_season_regression(self, year, remove_inactive_riders = True):
         """
