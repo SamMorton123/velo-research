@@ -871,8 +871,16 @@
             "teleflex-tour": 12,
             "tour-de-suisse": 4,
             "tour-of-slovenia": 11,
-            "touf-of-belgium": 12,
-            "la-route-d-occitanie": 9
+            "tour-of-belgium": 12,
+            "la-route-d-occitanie": 9,
+            "tour-de-france": 0,
+            "tour-de-pologne": 8,
+            "vuelta-a-burgos": 8,
+            "tour-de-wallonie": 11,
+            "sibiu-cycling-tour": 11,
+            "vuelta-a-castilla-y-leon": 11,
+            "sazka-tour": 11,
+            "tour-de-l-ain": 10
         }
     }
 }
