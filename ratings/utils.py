@@ -76,6 +76,8 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
                 # get the stage number and length
                 stage_name = stage_data['stage'].iloc[0]
                 stage_length = stage_data['length'].iloc[0]   
+                stage_vert = stage_data[VERT_COL].iloc[0]
+                points_scale = stage_data['points_scale'].iloc[0]
 
                 # sprint ranking must make sure appropriate number of riders
                 # finished on the same time
@@ -105,9 +107,6 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
                     else:
                         continue
                 else:
-
-                    # for non-GC race types, get the race's weight using its points scale
-                    points_scale = stage_data['points_scale'].iloc[0]
                     
                     # this allows us to ignore races with a points scale of nan
                     if isinstance(points_scale, float): continue
@@ -132,6 +131,7 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
 
                 # save the results and rating in eval_results
                 eval_results[f'{race}-{year}-{stage_name}'] = {
+                    'race': race,
                     'date': stage_date.isoformat(),
                     'actual': list(stage_data['rider']),
                     'timegaps': list(stage_data['time']),
@@ -139,7 +139,9 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
                         [rider, elo.riders[rider].rating] if rider in elo.riders else [rider, 1500]
                         for rider in stage_data['rider']
                     ], key = lambda t: t[1], reverse = True),
-                    'length': stage_length
+                    'length': stage_length,
+                    'vert': stage_vert,
+                    'points_scale': points_scale
                 }
                 
                 # simulate the race and add it to the rankings
