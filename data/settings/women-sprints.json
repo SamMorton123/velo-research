@@ -5,7 +5,9 @@
     "new-season-regression": 0.25,
     "race-classes": {},
     "race-class-weights": {
-        "F-WWT": 14,
+        "F-WWT": 16,
+        "F-1.WWT.Stage": 15,
+        "F-2.WWT.Stage": 13,
         "F-1.PRO": 10,
         "F-2.PRO.Stage": 9,
         "F-1.1": 5.5,

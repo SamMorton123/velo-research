@@ -4,8 +4,8 @@
     "timegap-multiplier": 1,
     "new-season-regression": 0.2,
     "race-classes": {
-        "0": 26,
-        "1": 18,
+        "0": 40,
+        "1": 30,
         "2": 12,
         "3": 10,
         "4": 9,
@@ -880,7 +880,10 @@
             "sibiu-cycling-tour": 11,
             "vuelta-a-castilla-y-leon": 11,
             "sazka-tour": 11,
-            "tour-de-l-ain": 10
+            "tour-de-l-ain": 10,
+            "deutschland-tour": 8,
+            "vuelta-a-espana": 1,
+            "tour-of-britain": 11
         }
     }
 }
