@@ -54,6 +54,8 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
     # prepare data for future ML applications
     eval_results = {}
 
+    elo_data = {'year': [], 'race': [], 'stage': [], 'rider': [], 'prerace_rating': [], 'place': []}
+
     # loop through each year in the gc data
     for year in range(beg_year, end_year):
         
@@ -78,6 +80,7 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
                 stage_length = stage_data['length'].iloc[0]   
                 stage_vert = stage_data[VERT_COL].iloc[0]
                 points_scale = stage_data['points_scale'].iloc[0]
+                profile_score = stage_data['profile_score'].iloc[0]
 
                 # sprint ranking must make sure appropriate number of riders
                 # finished on the same time
@@ -94,12 +97,14 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
                     # do not consider this stage if too few riders finish in the
                     # main group; this is to further exclude finishes that are
                     # not necessarily bunch sprints
-                    if num_same_time < SPRINT_NUM_SAME_TIME_FINISH_THRESH:
+                    if (
+                        not (num_same_time >= 15 and profile_score < 45) and
+                        num_same_time < SPRINT_NUM_SAME_TIME_FINISH_THRESH
+                    ):
                         continue
 
                 # get race weight
                 if race_type == 'gc':
-                    
                     # for GC rankings, the race must be in the race_classes dict
                     # to be considered for the rankings
                     if str(year) in race_weights and race in race_weights[str(year)]:
@@ -107,7 +112,6 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
                     else:
                         continue
                 else:
-                    
                     # this allows us to ignore races with a points scale of nan
                     if isinstance(points_scale, float): continue
                     
@@ -128,6 +132,17 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
                 
                 # get the race's date as date object
                 stage_date = get_race_date(stage_data)
+
+                # save just the elo ratings of riders going into the race
+                for i in range(len(stage_data['rider'])):
+                    rider = stage_data['rider'].iloc[i]
+
+                    elo_data['year'].append(year)
+                    elo_data['race'].append(race)
+                    elo_data['stage'].append(stage_name)
+                    elo_data['rider'].append(rider)
+                    elo_data['prerace_rating'].append(elo.riders[rider].rating if rider in elo.riders else 1500)
+                    elo_data['place'].append(i + 1)
 
                 # save the results and rating in eval_results
                 eval_results[f'{race}-{year}-{stage_name}'] = {
@@ -178,6 +193,8 @@ def elo_driver(data_main, race_classes, race_weights, beg_year, end_year, gender
             with open(f'data/eval-data/{gender}-{race_type}-{beg_year}-{end_year}-{given_tt_vert_adjustor}-{given_tt_length_adjustor}-eval.json', 'w') as f:
                 json.dump(eval_results, f)
             f.close()
+        
+        pd.DataFrame(elo_data).to_csv(f'data/elo-data/{gender}-{race_type}-{beg_year}-{end_year}-{given_tt_vert_adjustor}-{given_tt_length_adjustor}.csv', index = False)
     
     return eval_results
 
