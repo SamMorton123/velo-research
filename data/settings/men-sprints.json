@@ -3,6 +3,8 @@
     "decay-beta": 2,
     "timegap-multiplier": 1,
     "new-season-regression": 0.45,
+    "sprinting_bunch_finish_thresh": 30,
+    "sprinting_max_profile_score": 45,
     "race-classes": {},
     "race-class-weights": {
         "GT.A.Stage": 18,
