@@ -14,7 +14,7 @@ from ratings.Velo import Velo
 # ===== Script Parameters ===== #
 ACCEPTED_RACE_TYPE_CATS = ['gc', 'one-day-race', 'itt', 'sprints']
 ACCEPTED_GENDER_CATS = ['men', 'women']
-VERBOSE = True
+VERBOSE = False
 MIN_YEAR = 1995
 MAX_YEAR = 2023
 SAVE_RESULTS = False
@@ -61,23 +61,29 @@ WEIGHTS = settings['race-class-weights']
 NEW_SEASON_REGRESS_WEIGHT = settings['new-season-regression']
 TT_LENGTH_ADJUSTOR = settings['tt-length-adjustor'] if race_type == 'itt' else None
 TT_VERT_ADJUSTOR = settings['tt-vert-adjustor'] if race_type == 'itt' else None
+SPRINTING_BUNCH_THRESH = settings['sprinting_bunch_finish_thresh'] if race_type == 'sprints' else None
+SPRINTING_MAX_PROFILE_SCORE = settings['sprinting_max_profile_score'] if race_type == 'sprints' else None
 
 # results data
 DATA = pd.read_csv(RESULTS_DATA_PATH)
 
-utils.elo_driver(
-    DATA, RACE_CLASSES, WEIGHTS, 
-    beg_year, end_year, gender, race_type,
-    timegap_multiplier = TIMEGAP_MULT,
-    decay_alpha = DECAY_ALPHA,
-    decay_beta = DECAY_BETA,
-    new_season_regress_weight = NEW_SEASON_REGRESS_WEIGHT,
-    given_tt_length_adjustor = TT_LENGTH_ADJUSTOR,
-    given_tt_vert_adjustor = TT_VERT_ADJUSTOR,
-    eval_races = [
-        'tour-de-france', 'giro-d-italia', 'vuelta-a-espana',
-        'paris-nice', 'tirreno-adriatico', 'dauphine', 'volta-a-catalunya',
-        'itzulia-basque-country', 'tour-de-suisse'
-    ], 
-    save_results = True
-)
+# initialzie elo driver params
+driver_race_data = {'race_classes': RACE_CLASSES, 'race_weights': WEIGHTS}
+driver_settings = {
+    'begin_year': beg_year,
+    'end_year': end_year,
+    'gender': gender,
+    'race_type': race_type,
+    'timegap_multiplier': TIMEGAP_MULT,
+    'decay_alpha': DECAY_ALPHA,
+    'decay_beta': DECAY_BETA,
+    'new_season_regression_weight': NEW_SEASON_REGRESS_WEIGHT,
+    'tt_length_adjustor': TT_LENGTH_ADJUSTOR,
+    'tt_vert_adjustor': TT_VERT_ADJUSTOR,
+    'save_results': SAVE_RESULTS,
+    'verbose': VERBOSE,
+    'sprinting_bunch_finish_thresh': SPRINTING_BUNCH_THRESH,
+    'sprinting_max_profile_score': SPRINTING_MAX_PROFILE_SCORE
+}
+
+utils.elo_driver(DATA, driver_race_data, driver_settings)
